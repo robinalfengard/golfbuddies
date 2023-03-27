@@ -19,6 +19,14 @@ class UserService {
     return axios.post(USER_REST_API_URL + "/add", user);
   }
 
+  loginUser(user) {
+    return axios.post(USER_REST_API_URL + "/login", user);
+  }
+
+  getUserDetails(userId) {
+    return axios.get(USER_REST_API_URL + "/" + userId);
+  }
+
   // updateBook(book, bookId) {
   //   return axios.put(BOOK_REST_API_URL  bookId, book);
   // }

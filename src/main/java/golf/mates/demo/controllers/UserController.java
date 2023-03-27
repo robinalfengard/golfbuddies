@@ -25,10 +25,21 @@ public class UserController {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<User> getAllUsers(@PathVariable String id) {
+        return new ResponseEntity<User>(userService.getUserDetails(id).get(), HttpStatus.OK);
+    }
+
     @PostMapping("add")
     public ResponseEntity<HttpStatus> addNewUser(@Valid @RequestBody UserDto userDto) {
         userService.registerNewUser(userDto);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PostMapping("login")
+    public ResponseEntity<User> loginUser(@Valid @RequestBody UserDto userDto) {
+
+        return new ResponseEntity<User>(userService.loginUser(userDto), HttpStatus.OK);
     }
 
 }

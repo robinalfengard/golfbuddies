@@ -3,7 +3,7 @@ import UserService from "../UserService";
 import { withRouter } from "../common/with-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class AddUserComponent extends Component {
+class LoginComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -16,15 +16,15 @@ class AddUserComponent extends Component {
     this.changePasswordHandler = this.changePasswordHandler.bind(this);
   }
 
-  saveUser = (e) => {
+  loginUser = (e) => {
     e.preventDefault();
     let user = {
       username: this.state.username,
       password: this.state.password,
     };
 
-    UserService.addUser(user).then((res) => {
-      this.props.router.navigate("/");
+    UserService.loginUser(user).then((res) => {
+      this.props.router.navigate("/home/" + res.data.id);
     });
   };
 
@@ -47,7 +47,7 @@ class AddUserComponent extends Component {
         <div>
           <div>
             <div>
-              Sign Up
+              Log in
               <div>
                 <form>
                   <div>
@@ -69,7 +69,7 @@ class AddUserComponent extends Component {
                     />
                   </div>
 
-                  <button onClick={this.saveUser}>Save</button>
+                  <button onClick={this.loginUser}>Login</button>
                   {/* <button
                     onClick={this.cancel.bind(this)}
                     style={{ marginLeft: "10px" }}
@@ -86,4 +86,4 @@ class AddUserComponent extends Component {
   }
 }
 
-export default withRouter(AddUserComponent);
+export default withRouter(LoginComponent);
