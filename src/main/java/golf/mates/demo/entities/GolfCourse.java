@@ -14,14 +14,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class GolfCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long id;
-    private String username;
-    private String password;
-    private Double handicap;
-    private Boolean hasCar;
-    /*private Double rating;*/
-//    private Long locationId;
+    private Long id;
+    private Long clubId;
+    private Long locationId;
+
 }

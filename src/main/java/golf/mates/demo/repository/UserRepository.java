@@ -1,4 +1,7 @@
 package golf.mates.demo.repository;
 
-public interface UserRepository {
+import golf.mates.demo.entities.User;
+import org.springframework.data.repository.CrudRepository;
+
+public interface UserRepository extends CrudRepository<User, Long> {
 }
