@@ -1,6 +1,7 @@
 package golf.mates.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import golf.mates.demo.dtos.UserDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,11 @@ public class User {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public User(UserDto userDto) {
+        this.username = userDto.getUsername();
+        this.password = userDto.getPassword();
     }
 
 }

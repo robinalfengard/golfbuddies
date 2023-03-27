@@ -1,13 +1,13 @@
 package golf.mates.demo.controllers;
 
+import golf.mates.demo.dtos.UserDto;
 import golf.mates.demo.entities.User;
 import golf.mates.demo.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +23,11 @@ public class UserController {
     public ResponseEntity<List<User>> getAllUsers() {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
+
+    @PostMapping("add")
+    public ResponseEntity<HttpStatus> addNewUser(@Valid @RequestBody UserDto userDto) {
+        userService.registerNewUser(userDto);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
