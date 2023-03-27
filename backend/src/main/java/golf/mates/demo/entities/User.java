@@ -20,10 +20,10 @@ public class User {
     private Long id;
     private String username;
     private String password;
-  /*  private Double handicap;
+    private Double handicap;
     private Boolean hasCar;*/
-    /*private Double rating;*/
-//    private Long locationId;
+   // private Double rating;
+    private Long locationId;
 
 
     public User(String username, String password) {
