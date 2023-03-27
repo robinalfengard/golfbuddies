@@ -1,3 +1,4 @@
+/*
 package golf.mates.demo.entities;
 
 import jakarta.persistence.Entity;
@@ -14,3 +15,4 @@ import lombok.Setter;
 public class Booking {
 
 }
+*/
