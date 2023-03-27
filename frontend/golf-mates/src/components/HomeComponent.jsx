@@ -36,7 +36,6 @@ class AddUserComponent extends Component {
             Handicap: {user.handicap}
           </div>
         </div>
-      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 package golf.mates.demo.service;
 
 
-import golf.mates.demo.dtos.UserDto;
+import golf.mates.demo.dtos.request.UserRegistrationDto;
 import golf.mates.demo.entities.User;
 import golf.mates.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,14 +19,14 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    private User mapUserDtoToUser(UserDto userDto) {
-        User user = new User(userDto);
+    private User mapUserDtoToUser(UserRegistrationDto userRegistrationDto) {
+        User user = new User(userRegistrationDto);
         user.setPassword(user.getPassword());
         return user;
     }
 
-    public void registerNewUser(UserDto userDto) {
-        userRepository.save(mapUserDtoToUser(userDto));
+    public void registerNewUser(UserRegistrationDto userRegistrationDto) {
+        userRepository.save(mapUserDtoToUser(userRegistrationDto));
     }
 
 }
