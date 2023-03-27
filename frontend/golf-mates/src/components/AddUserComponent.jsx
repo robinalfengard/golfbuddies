@@ -24,7 +24,7 @@ class AddUserComponent extends Component {
     };
 
     UserService.addUser(user).then((res) => {
-      this.props.router.navigate("/");
+      this.props.router.navigate("/login");
     });
   };
 
