@@ -35,9 +35,6 @@ public class UserController {
     }
 
 
-
-
-
     private UUID getLoggedInUserId() {
         Authentication authentication =
                 SecurityContextHolder.getContext().getAuthentication();
@@ -51,5 +48,7 @@ public class UserController {
                 SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
     }
+
+  
 
 }
