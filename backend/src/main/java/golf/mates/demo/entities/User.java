@@ -47,17 +47,24 @@ public class User {
     private Timestamp createdDate;
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
-    private String role = "ROLE_USER";
+    private String role;
 
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        this.role = "ROLE_USER";
     }
 
     public User(UserRegistrationDto userRegistrationDto) {
         this.username = userRegistrationDto.getUsername();
         this.password = userRegistrationDto.getPassword();
+    }
+
+    public User(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
 
