@@ -1,0 +1,313 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Golf Club API",
+    "description": "This API allows users to manage golf clubs, locations, messages, and users.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/golfclub/all": {
+      "get": {
+        "summary": "Retrieve all golf clubs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GolfClub"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/golfclub/{locationId}": {
+      "get": {
+        "summary": "Retrieve golf clubs by location ID",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "Location ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GolfClub"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/location/all": {
+      "get": {
+        "summary": "Retrieve all locations",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messages/{username}/received": {
+      "get": {
+        "summary": "Retrieve messages received by user",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Username",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Message"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messages/{username}/sent": {
+      "get": {
+        "summary": "Retrieve messages sent by user",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "Username",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Message"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+      "/api/user/golfclub/{golfClubId}": {
+        "get": {
+          "summary": "Get all users at a specific golf club by ID.",
+          "parameters": [
+            {
+              "name": "golfClubId",
+              "in": "path",
+              "required": true,
+              "description": "The ID of the golf club."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A list of user info objects.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserInfoDto"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/user/location/{locationId}": {
+        "get": {
+          "summary": "Get all users at a specific location by ID.",
+          "parameters": [
+            {
+              "name": "locationId",
+              "in": "path",
+              "required": true,
+              "description": "The ID of the location."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A list of user info objects.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/UserInfoDto"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+{
+  "/users/list": {
+    "get": {
+      "summary": "Get a list of all users",
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserInfoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/users/register": {
+    "post": {
+      "summary": "Register a new user",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UserRegistrationDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Successful response"
+        }
+      }
+    }
+  },
+  "/users/{username}/info": {
+    "get": {
+      "summary": "Get user info by username",
+      "parameters": [
+        {
+          "name": "username",
+          "in": "path",
+          "required": true,
+          "description": "The username of the user to get info for",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInfoDto"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/users/update/{username}/info": {
+    "put": {
+      "summary": "Update user info by username",
+      "parameters": [
+        {
+          "name": "username",
+          "in": "path",
+          "required": true,
+          "description": "The username of the user to update info for",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UserInfoDto"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserInfoDto"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
