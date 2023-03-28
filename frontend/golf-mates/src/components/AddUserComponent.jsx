@@ -11,8 +11,8 @@ class AddUserComponent extends Component {
       username: "",
       password: "",
       handicap: "",
-      hasCar: "",
-      location: "",
+      hasCar: false,
+      location: 1,
     };
 
     this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
@@ -54,7 +54,6 @@ class AddUserComponent extends Component {
   changeLocationHandler = (event) => {
     this.setState({ location: event.target.value });
   };
-
 
   cancel() {
     // this.props.router.navigate("/login");
@@ -100,7 +99,8 @@ class AddUserComponent extends Component {
 
                   <div>
                     <label> Car?: </label>
-                    <input type={"checkbox"}
+                    <input
+                      type={"checkbox"}
                       placeholder="Car?"
                       name="hasCar"
                       value={this.state.hasCar}
@@ -110,15 +110,16 @@ class AddUserComponent extends Component {
 
                   <div>
                     <label> Location: </label>
-                    <select placeholder="Location"
+                    <select
+                      placeholder="Location"
                       name="location"
                       value={this.state.location}
-                      onChange={(e) => this.changeLocationHandler(e)}>
-                    <option value="1">Stockholm</option>
-                    <option value="2">Göteborg</option>
-                    <option value="3">Malmö</option>
-
-                      </select>
+                      onChange={(e) => this.changeLocationHandler(e)}
+                    >
+                      <option value="1">Stockholm</option>
+                      <option value="2">Göteborg</option>
+                      <option value="3">Malmö</option>
+                    </select>
                   </div>
 
                   <button onClick={this.saveUser}>Save</button>

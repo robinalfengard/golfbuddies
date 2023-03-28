@@ -26,8 +26,8 @@ public class UserService {
         return user;
     }
 
-    public void registerNewUser(UserDto userDto) {
-        userRepository.save(mapUserDtoToUser(userDto));
+    public void registerNewUser(User user) {
+        userRepository.save(user);
     }
 
     public User loginUser(UserDto userDto) {
