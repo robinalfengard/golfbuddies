@@ -33,10 +33,10 @@ public class User {
     private UUID id;
     private String username;
     private String password;
-  /*  private Double handicap;
-    private Boolean hasCar;*/
-    /*private Double rating;*/
-//    private Long locationId;
+    private Double handicap;
+    private Boolean hasCar;
+   // private Double rating;
+    private Long locationId;
 
     private boolean accountExpired = false;
     private boolean accountLocked = false;

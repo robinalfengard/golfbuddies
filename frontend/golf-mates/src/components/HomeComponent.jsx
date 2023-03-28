@@ -3,23 +3,17 @@ import UserService from "../UserService";
 import { withRouter } from "../common/with-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class AddUserComponent extends Component {
+class HomeComponent extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      username: "",
-      location: "",
-      handicap: "",
-      hasCar: "",
+      user: [],
     };
-
-    this.changeUsernameHandler = this.changeUsernameHandler.bind(this);
-    this.changePasswordHandler = this.changePasswordHandler.bind(this);
   }
 
   componentDidMount() {
-    UserService.getUserDetails().then((response) => {
+    UserService.getUserDetails(this.props.router.params.id).then((response) => {
       this.setState({ user: response.data });
     });
   }
@@ -27,17 +21,19 @@ class AddUserComponent extends Component {
   render() {
     return (
       <div className="container">
-            <div>
-              User Profile
-            </div>
-            <div>   
-            Username: {user.username}
-            Location: {user.location}
-            Handicap: {user.handicap}
-          </div>
+        <div>
+          <h1>User Profile</h1>
+        </div>
+        <br></br>
+        <div>
+          Username: {this.state.user.username}
+          <br></br>
+          Location: {this.state.user.location}
+          <br></br>
+          Handicap: {this.state.user.handicap}
         </div>
     );
   }
 }
 
-export default withRouter(AddUserComponent);
+export default withRouter(HomeComponent);
