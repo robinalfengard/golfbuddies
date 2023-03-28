@@ -1,19 +1,16 @@
 package golf.mates.demo.controllers;
 
 import golf.mates.demo.dtos.request.UserRegistrationDto;
-import golf.mates.demo.entities.SecurityUser;
-import golf.mates.demo.entities.User;
-import golf.mates.demo.service.UserService;
+import golf.mates.demo.dtos.responses.UserInfoDto;
+import golf.mates.demo.services.UserService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 
 @RestController
@@ -24,7 +21,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("list")
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<UserInfoDto>> getAllUsers() {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
@@ -34,22 +31,26 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
-
-
-
-    private UUID getLoggedInUserId() {
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
-        SecurityUser loggedInUser = (SecurityUser) authentication.getPrincipal();
-        return loggedInUser.getUserId();
-
+    @GetMapping("{username}/info")
+    public ResponseEntity<Object> getUserInfo(@PathVariable("username") @NotBlank String username) {
+        return new ResponseEntity<>(userService.getUserInfo(username), HttpStatus.OK);
     }
 
-    private String getLoggedInUsername() {
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
-        return authentication.getName();
+    @PutMapping("update/{username}/info")
+    public ResponseEntity<Object> updateUserInfo(@PathVariable String username) {
+        return null;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

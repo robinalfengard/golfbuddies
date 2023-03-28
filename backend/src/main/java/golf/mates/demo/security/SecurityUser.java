@@ -1,5 +1,6 @@
-package golf.mates.demo.entities;
+package golf.mates.demo.security;
 
+import golf.mates.demo.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,7 +25,7 @@ public class SecurityUser implements UserDetails {
                 .toList();
     }
 
-    public UUID getUserId() {
+    public Long getUserId() {
         return user.getId();
     }
 

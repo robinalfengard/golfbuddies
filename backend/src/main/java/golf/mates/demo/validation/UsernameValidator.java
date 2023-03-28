@@ -1,6 +1,6 @@
 package golf.mates.demo.validation;
 
-import golf.mates.demo.repository.UserRepository;
+import golf.mates.demo.repositories.UserRepository;
 
 import jakarta.persistence.NonUniqueResultException;
 import jakarta.validation.ConstraintValidator;
