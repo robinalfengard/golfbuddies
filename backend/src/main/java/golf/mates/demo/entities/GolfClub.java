@@ -19,4 +19,15 @@ public class GolfClub {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String club;
+    private String district;
+
+    public GolfClub(String club, String district) {
+        this.club = club;
+        this.district = district;
+    }
+
+
+
+
 }

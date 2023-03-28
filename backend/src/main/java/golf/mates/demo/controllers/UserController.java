@@ -1,19 +1,22 @@
 package golf.mates.demo.controllers;
 
-import golf.mates.demo.dtos.UserDto;
+import golf.mates.demo.dtos.request.UserRegistrationDto;
+import golf.mates.demo.entities.SecurityUser;
 import golf.mates.demo.entities.User;
 import golf.mates.demo.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/users/")
 @RequiredArgsConstructor
 public class UserController {
@@ -25,25 +28,28 @@ public class UserController {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<User> getAllUsers(@PathVariable String id) {
-        return new ResponseEntity<User>(userService.getUserDetails(id).get(), HttpStatus.OK);
-    }
-
-    @PostMapping("add")
-    public ResponseEntity<HttpStatus> addNewUser(@Valid @RequestBody User user) {
-        userService.registerNewUser(user);
+    @PostMapping("register")
+    public ResponseEntity<HttpStatus> addNewUser(@Valid @RequestBody UserRegistrationDto userRegistrationDto) {
+        userService.registerNewUser(userRegistrationDto);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
 
 
-    @PostMapping("login")
-    public ResponseEntity<User> loginUser(@Valid @RequestBody UserDto userDto) {
 
-        return new ResponseEntity<User>(userService.loginUser(userDto), HttpStatus.OK);
+    private UUID getLoggedInUserId() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+        SecurityUser loggedInUser = (SecurityUser) authentication.getPrincipal();
+        return loggedInUser.getUserId();
+
     }
 
+    private String getLoggedInUsername() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
+    }
 
 }

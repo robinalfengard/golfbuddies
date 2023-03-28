@@ -1,13 +1,14 @@
-package golf.mates.demo.dtos;
+package golf.mates.demo.dtos.request;
 
 
+import golf.mates.demo.validation.UniqueUsername;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class UserDto {
+public class UserRegistrationDto {
 
-    @NotBlank
+    @UniqueUsername
     private String username;
 
     @NotBlank
