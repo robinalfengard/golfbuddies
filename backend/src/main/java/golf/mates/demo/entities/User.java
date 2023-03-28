@@ -21,7 +21,7 @@ public class User {
     private String username;
     private String password;
     private Double handicap;
-    private Boolean hasCar;*/
+    private Boolean hasCar;
    // private Double rating;
     private Long locationId;
 
