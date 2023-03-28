@@ -4,7 +4,9 @@ import golf.mates.demo.entities.GolfClub;
 import golf.mates.demo.repositories.GolfClubRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class GolfClubService {
         if (!golfClubs.isEmpty()) {
             return golfClubs;
         } else {
-            throw new EntityNotFoundException();
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }
 

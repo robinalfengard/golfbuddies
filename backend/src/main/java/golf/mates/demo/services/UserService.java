@@ -7,8 +7,10 @@ import golf.mates.demo.entities.User;
 import golf.mates.demo.repositories.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,7 +42,7 @@ public class UserService {
     public UserInfoDto getUserInfo(String username) {
         return Mapper.UserToUserInfoDto(
                 userRepository.findByUsernameIgnoreCase(username)
-                        .orElseThrow(EntityNotFoundException::new)
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND))
         );
     }
 
@@ -54,7 +56,7 @@ public class UserService {
                     .map(Mapper::UserToUserInfoDto)
                     .collect(Collectors.toList());
         } else {
-            throw new EntityNotFoundException();
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
     }
@@ -69,7 +71,7 @@ public class UserService {
                     .map(Mapper::UserToUserInfoDto)
                     .collect(Collectors.toList());
         } else {
-            throw new EntityNotFoundException();
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
     }
