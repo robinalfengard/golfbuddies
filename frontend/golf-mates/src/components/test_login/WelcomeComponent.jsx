@@ -72,7 +72,6 @@ function WelcomeComponent(props) {
            <div className="mb-2">
         <Button variant="primary" size="lg">
         {isAuthenticated && <Link className="nav-link" to="/logout" onClick={logout}> Find Players!</Link>}
-         
         </Button>{' '}
      
       </div>
@@ -120,9 +119,9 @@ function WelcomeComponent(props) {
   
           <Carousel.Caption>
             <h2> <h1>Welcome {username}</h1></h2>
-            <h4>
+            <h2>
               What will you experience?
-            </h4>
+            </h2>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
