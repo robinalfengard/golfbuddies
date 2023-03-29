@@ -122,7 +122,7 @@ class AddUserComponent extends Component {
                     </select>
                   </div>
 
-                  <button onClick={this.saveUser}>Save</button>
+                  <button>Save</button>
                   {/* <button
                     onClick={this.cancel.bind(this)}
                     style={{ marginLeft: "10px" }}

@@ -2,6 +2,7 @@ import {Link, useMatch, useResolvedPath} from 'react-router-dom'
 import { useAuth } from '../security/AuthContext'
 
 
+
 function HeaderComponent() {    
 
     const authContext = useAuth()
@@ -43,6 +44,7 @@ function HeaderComponent() {
                                     {isAuthenticated 
                                             && <CustomLink className="nav-link" to="/">Min sida</CustomLink>}                                    
                                 </li>
+                   
                             </ul>
                         </div>
                         <ul className="navbar-nav">
