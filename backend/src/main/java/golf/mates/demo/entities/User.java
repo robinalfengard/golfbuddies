@@ -58,7 +58,7 @@ public class User {
     private Timestamp createdDate;
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
-    private String role;
+    private String role="ROLE_USER";
 
 
     public User(String username, String password, Double handicap) {
@@ -87,7 +87,7 @@ public class User {
     public User(UserRegistrationDto userRegistrationDto) {
         this.username = userRegistrationDto.getUsername();
         this.password = userRegistrationDto.getPassword();
-//        this.handicap = userRegistrationDto.getHandicap();
+        this.handicap = userRegistrationDto.getHandicap();
     }
 
     public User(String username, String password, String role) {

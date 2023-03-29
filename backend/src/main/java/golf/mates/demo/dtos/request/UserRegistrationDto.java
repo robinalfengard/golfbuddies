@@ -14,11 +14,16 @@ public class UserRegistrationDto {
     private String username;
 /*    @Email
     private String email;*/
+
+    private Double handicap;
+
     @NotBlank
     private String password;
 
 
     private Long locationId;
+
+
 
 
 
