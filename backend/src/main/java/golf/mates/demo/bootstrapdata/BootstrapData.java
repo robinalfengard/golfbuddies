@@ -58,9 +58,9 @@ public class BootstrapData implements CommandLineRunner {
 
     private void loadUserData() {
 
-        User user1 = new User("user1", encoder.encode("password"));
-        User user2 = new User("user2", encoder.encode("password"));
-        User user3 = new User("user3", encoder.encode("password"));
+        User user1 = new User("user1", encoder.encode("password"), 23.00);
+        User user2 = new User("user2", encoder.encode("password"), 45.00);
+        User user3 = new User("user3", encoder.encode("password"),5.00);
 
         userRepository.save(user1);
         userRepository.save(user2);

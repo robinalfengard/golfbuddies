@@ -13,12 +13,20 @@ import CardGroup from 'react-bootstrap/CardGroup';
 
 
 function WelcomeComponent(props) {
+    const authContext = useAuth()
+
+    const isAuthenticated = authContext.isAuthenticated
+
+    function logout() {
+        authContext.logout()
+    }
 
 
     const {username} = useParams()
+    
 
    
-    const [handicap, setHandicap] = useState('5.0')
+    const [handicap, setHandicap] = useState(UserService.getUserDetails(useParams).handicap)
     function handleHandicapChange(event) {
         setHandicap(event.target.value)
     }
@@ -30,7 +38,9 @@ function WelcomeComponent(props) {
 
     const [message, setMessage] = useState(null)
 
-    const authContext = useAuth()
+
+
+    
  
 
 
@@ -61,7 +71,8 @@ function WelcomeComponent(props) {
            
            <div className="mb-2">
         <Button variant="primary" size="lg">
-          Find Players!
+        {isAuthenticated && <Link className="nav-link" to="/logout" onClick={logout}> Find Players!</Link>}
+         
         </Button>{' '}
      
       </div>
@@ -121,7 +132,8 @@ function WelcomeComponent(props) {
       <Card>
         <Card.Img variant="top" src="https://media.istockphoto.com/id/1064738096/photo/golfer-friends.jpg?s=612x612&w=0&k=20&c=e8XrrsRJN5ZJ0sIKfji7gKryCwh0S7VjVgE2WGPqmO0=" className='card-img'/>
         <Card.Body>
-          <Card.Title>Bookings</Card.Title>
+        
+          <Card.Title>{isAuthenticated && <Link className="nav-link" to="/logout" onClick={logout}>Bookings</Link>}</Card.Title>
           <Card.Text>
             Check your upcoming schedule of golf matches, and connect with golfers from all over Sweden! 
           </Card.Text>
@@ -131,7 +143,10 @@ function WelcomeComponent(props) {
       <Card>
         <Card.Img variant="top" src="https://media.istockphoto.com/id/96451938/photo/golf-scorecard-with-birdie.jpg?s=612x612&w=0&k=20&c=5lJiGBKNkWm5zKsY5aJjCr4v--3EcF2BEQF1lFMkJqE=" className='card-img' />
         <Card.Body>
-          <Card.Title>Match History</Card.Title>
+          <Card.Title>
+          {isAuthenticated &&
+          <Link className="nav-link" to="/logout" onClick={logout}>Match History</Link>}
+            </Card.Title>
           <Card.Text>
             See your previous results and get contact information from golfers you've previously been matched with. 
           </Card.Text>
@@ -141,7 +156,9 @@ function WelcomeComponent(props) {
       <Card>
         <Card.Img variant="top" className='card-img' src="https://st3.depositphotos.com/1004061/18217/i/600/depositphotos_182178420-stock-photo-golf-equipment-bag-standing-course.jpg" />
         <Card.Body>
-          <Card.Title>Settings and Filter</Card.Title>
+        
+          <Card.Title>{isAuthenticated &&
+          <Link className="nav-link" to="/logout" onClick={logout}>Settings and Filter</Link>}</Card.Title>
           <Card.Text>
             Adjust your filter to get in contact with golfers in a certain area or with a specific skill range.
           </Card.Text>

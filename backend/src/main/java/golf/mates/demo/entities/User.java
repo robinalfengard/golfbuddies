@@ -50,15 +50,17 @@ public class User {
     private String role;
 
 
-    public User(String username, String password) {
+    public User(String username, String password, Double handicap) {
         this.username = username;
         this.password = password;
+        this.handicap = handicap;
         this.role = "ROLE_USER";
     }
 
     public User(UserRegistrationDto userRegistrationDto) {
         this.username = userRegistrationDto.getUsername();
         this.password = userRegistrationDto.getPassword();
+        this.handicap = userRegistrationDto.getHandicap();
     }
 
     public User(String username, String password, String role) {

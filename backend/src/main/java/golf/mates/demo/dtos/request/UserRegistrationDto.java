@@ -14,4 +14,6 @@ public class UserRegistrationDto {
     @NotBlank
     private String password;
 
+    private Double handicap;
+
 }

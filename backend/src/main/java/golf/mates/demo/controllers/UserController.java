@@ -52,4 +52,12 @@ public class UserController {
         return authentication.getName();
     }
 
+    private double getLoggedInUserHandicap() {
+        Authentication authentication =
+                SecurityContextHolder.getContext().getAuthentication();
+        SecurityUser loggedInUser = (SecurityUser) authentication.getPrincipal();
+        return loggedInUser.getUserHandicap();
+
+    }
+
 }

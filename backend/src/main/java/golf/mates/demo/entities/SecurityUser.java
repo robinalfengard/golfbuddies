@@ -38,6 +38,10 @@ public class SecurityUser implements UserDetails {
         return user.getUsername();
     }
 
+    public double getUserHandicap() {
+        return user.getHandicap();
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return !user.isAccountExpired();
