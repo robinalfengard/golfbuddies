@@ -40,7 +40,6 @@ public class UserController {
                 SecurityContextHolder.getContext().getAuthentication();
         SecurityUser loggedInUser = (SecurityUser) authentication.getPrincipal();
         return loggedInUser.getUserId();
-
     }
 
     private String getLoggedInUsername() {
@@ -49,6 +48,6 @@ public class UserController {
         return authentication.getName();
     }
 
-  
+
 
 }
