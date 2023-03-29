@@ -76,11 +76,18 @@ public class User {
         this.role = "ROLE_USER";
     }
 
+    public User(String username, String password, Location location) {
+        this.username = username;
+        this.password = password;
+        this.location = location;
+        this.role = "ROLE_USER";
+    }
+
 
     public User(UserRegistrationDto userRegistrationDto) {
         this.username = userRegistrationDto.getUsername();
         this.password = userRegistrationDto.getPassword();
-        this.handicap = userRegistrationDto.getHandicap();
+//        this.handicap = userRegistrationDto.getHandicap();
     }
 
     public User(String username, String password, String role) {
