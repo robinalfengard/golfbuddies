@@ -1,8 +1,5 @@
 package golf.mates.demo;
 
-import golf.mates.demo.entities.User;
-import golf.mates.demo.repository.UserRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

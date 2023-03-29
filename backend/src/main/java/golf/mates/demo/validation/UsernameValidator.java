@@ -1,6 +1,6 @@
 package golf.mates.demo.validation;
 
-import golf.mates.demo.repository.UserRepository;
+import golf.mates.demo.repositories.UserRepository;
 
 import jakarta.persistence.NonUniqueResultException;
 import jakarta.validation.ConstraintValidator;
@@ -18,7 +18,7 @@ public class UsernameValidator implements ConstraintValidator<UniqueUsername, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        if (!userRepository.existsByUsername(value)) {
+        if (!userRepository.existsByUsernameIgnoreCase(value)) {
             return true;
         }
         throw new NonUniqueResultException();

@@ -3,9 +3,9 @@ package golf.mates.demo.bootstrapdata;
 import golf.mates.demo.entities.GolfClub;
 import golf.mates.demo.entities.Location;
 import golf.mates.demo.entities.User;
-import golf.mates.demo.repository.GolfClubRepository;
-import golf.mates.demo.repository.LocationRepository;
-import golf.mates.demo.repository.UserRepository;
+import golf.mates.demo.repositories.GolfClubRepository;
+import golf.mates.demo.repositories.LocationRepository;
+import golf.mates.demo.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,9 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
 import java.io.*;
-import java.nio.file.Path;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 @Component
@@ -29,28 +27,44 @@ public class BootstrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
-        loadGolfClubData();
-        loadUserData();
-
+        loadData();
     }
 
-    private void loadGolfClubData() throws IOException {
-
+    private void loadData() throws IOException {
         File file = ResourceUtils.getFile("classpath:csvdata/golfklubbar_lista.csv");
-
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
+
+            Map<String ,String> golfClubs = new LinkedHashMap<>();
+            Map<String , Location> districtToObject = new HashMap<>();
+
             Set<String> landskapsSet = new HashSet<>();
             while((line = br.readLine()) != null) {
                 String[] golfClubData = line.split(";");
-                golfClubRepository.save(new GolfClub(golfClubData[0],golfClubData[1]));
                 String landskap = golfClubData[1].replaceAll("GDF", "").trim();
+                golfClubs.put(golfClubData[0], landskap);
                 landskapsSet.add(landskap);
-
             }
-            landskapsSet.forEach(s -> locationRepository.save(new Location(s)));
+
+            landskapsSet.forEach(s -> {
+                Location location = new Location(s);
+                districtToObject.put(s, location);
+                locationRepository.save(location);
+            }
+            );
+
+            golfClubs.forEach( (k, v) -> {
+
+                golfClubRepository.save(new GolfClub(k, districtToObject.get(v)));
+
+            });
+
         }
+
+
+        loadUserData();
+
+
 
     }
 
@@ -58,14 +72,22 @@ public class BootstrapData implements CommandLineRunner {
 
     private void loadUserData() {
 
-        User user1 = new User("user1", encoder.encode("password"));
-        User user2 = new User("user2", encoder.encode("password"));
-        User user3 = new User("user3", encoder.encode("password"));
+        Location location1 = locationRepository.findById(2L).get();
+        Location location2 = locationRepository.findById(15L).get();
+        Location location3 = locationRepository.findById(8L).get();
+
+        GolfClub golfClub1 = golfClubRepository.findById(10L).get();
+        GolfClub golfClub2 = golfClubRepository.findById(250L).get();
+        GolfClub golfClub3 = golfClubRepository.findById(100L).get();
+
+
+        User user1 = new User("user1", encoder.encode("password"), location1, golfClub1);
+        User user2 = new User("user2", encoder.encode("password"), location2, golfClub2);
+        User user3 = new User("user3", encoder.encode("password"), location3, golfClub3);
 
         userRepository.save(user1);
         userRepository.save(user2);
         userRepository.save(user3);
-
 
     }
 

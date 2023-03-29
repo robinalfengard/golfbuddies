@@ -32,6 +32,7 @@ class HomeComponent extends Component {
           <br></br>
           Handicap: {this.state.user.handicap}
         </div>
+        </div>
     );
   }
 }
