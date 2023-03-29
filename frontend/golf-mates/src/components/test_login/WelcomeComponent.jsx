@@ -8,7 +8,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import {useNavigate} from 'react-router-dom'
 
 
 
@@ -17,9 +16,6 @@ function WelcomeComponent(props) {
     const authContext = useAuth()
 
     const isAuthenticated = authContext.isAuthenticated
-
-    
-    const navigate = useNavigate()
 
     function logout() {
         authContext.logout()
@@ -161,7 +157,7 @@ function WelcomeComponent(props) {
         <Card.Body>
         
           <Card.Title>{isAuthenticated &&
-          <Link className="nav-link" to="/logout" onClick={navigate(`/welcome/${username}`)}>Settings and Filter</Link>}</Card.Title>
+          <Link className="nav-link" to="/logout" onClick={logout}>Settings and Filter</Link>}</Card.Title>
           <Card.Text>
             Adjust your filter to get in contact with golfers in a certain area or with a specific skill range.
           </Card.Text>
@@ -170,7 +166,8 @@ function WelcomeComponent(props) {
       </Card>
     </CardGroup>
     </div>
-</div>
+    
+      </div>
 
 
 
