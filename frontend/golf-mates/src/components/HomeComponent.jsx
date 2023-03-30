@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import UserService from "../UserService";
 import { withRouter } from "../common/with-router";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ".navbar.css"
+
 
 class HomeComponent extends Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class HomeComponent extends Component {
           Location: {this.state.user.location}
           <br></br>
           Handicap: {this.state.user.handicap}
+        </div>
         </div>
     );
   }

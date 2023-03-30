@@ -5,6 +5,9 @@ import ErrorComponent from './ErrorComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LoginComponent from './LoginComponent'
 import AuthProvider, { useAuth } from '../security/AuthContext'
+import BookingComponent from './Booking/BookingComponent'
+
+
 
 
 function AuthenticatedRoute({children}) {
@@ -23,6 +26,7 @@ export default function TestApp() {
                 <BrowserRouter>
                     <HeaderComponent />
                     <Routes>
+                    <Route path='/homePage' element={ <BookingComponent /> } />
                         <Route path='/' element={ <LoginComponent /> } />
                         <Route path='/login' element={ <LoginComponent /> } />
                         
@@ -40,7 +44,6 @@ export default function TestApp() {
                         } />
                         
                         <Route path='*' element={<ErrorComponent /> } />
-
                     </Routes>
                 </BrowserRouter>
             </AuthProvider>
