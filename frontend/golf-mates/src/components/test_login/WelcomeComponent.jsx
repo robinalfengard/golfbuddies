@@ -75,7 +75,7 @@ useEffect(
 
 
 /* 
-  let [handicap, setHandicap] = useState(2);
+ 
   function handleHandicapChange(event) {
     setHandicap(event.target.value);
   }
@@ -102,7 +102,7 @@ useEffect(
           name="location"
           // onChange={handleLocationChange}
         >
-          <option value="1">Stockholm</option>
+          <option value={user.location}>{user.location}</option>
           <option value="2">Hej</option>
           <option value="3">Malmö</option>
         </select>
