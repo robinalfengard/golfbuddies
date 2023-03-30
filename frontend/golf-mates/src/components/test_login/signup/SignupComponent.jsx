@@ -1,9 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import UserService from "../../UserService";
+import UserService from "../../../UserService";
+import LocationService from "../../../LocationService";
+import GolfClubService from "../../../GolfClubService";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
@@ -13,13 +15,31 @@ function SignupComponent() {
   const [validated, setValidated] = useState(false);
   const [repeatpassword, setRepeatpassword] = useState("");
   const [error, setError] = useState({ repeatpassword: "" });
+  const [districts, setDistricts] = useState([{ "": "" }]);
+  const [districtsId, setDistrictsid] = useState("");
+  const [golfclubs, setGolfclubs] = useState([]);
+  const [user, setUser] = useState([]);
+  const [showComponent, setShowComponent] = useState(false);
 
-  const [user, setUser] = useState({
-    username: "",
-    password: "",
-    handicap: "",
-    locationId: 1,
-  });
+  useEffect(() => {
+    getDistrictList();
+  }, []);
+
+  useEffect(() => {
+    getGolfClubs(user.locationId);
+  }, [user.locationId]);
+
+  async function getDistrictList() {
+    LocationService.getDistricts().then((response) => {
+      setDistricts(response.data);
+    });
+  }
+
+  async function getGolfClubs(id) {
+    GolfClubService.getGolfClubs(id).then((response) => {
+      setGolfclubs(response.data);
+    });
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -61,10 +81,20 @@ function SignupComponent() {
     }
   };
 
-  const changeLocationHandler = (event) => {
+  const changeDistrictHandler = (event) => {
     setUser((prevState) => ({
       ...prevState,
-      location: parseInt(event.target.value),
+      locationId: parseInt(event.target.value),
+    }));
+    console.log("location " + user.locationId);
+    // getGolfClubs(user.locationId);
+    // // renderGolfClubs();
+  };
+
+  const changeGolfClubHandler = (event) => {
+    setUser((prevState) => ({
+      ...prevState,
+      golfclubsId: parseInt(event.target.value),
     }));
   };
 
@@ -74,10 +104,11 @@ function SignupComponent() {
         <Card.Body>
           <Card.Title>Sign Up</Card.Title>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formUsername">
-              <FloatingLabel label="Username" className="mb-3">
+            <Form.Group className="mb-3">
+              <FloatingLabel controlId="floatingUsername" label="Username">
                 <Form.Control
                   required
+                  size="sm"
                   type="text"
                   placeholder="Username"
                   value={user.username}
@@ -136,17 +167,36 @@ function SignupComponent() {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formLocation">
-              <FloatingLabel label="Location" className="mb-3">
+              <FloatingLabel label="Golf district" className="mb-3">
                 <Form.Select
-                  id="location"
-                  placeholder="Location"
-                  name="location"
-                  value={user.location}
-                  onChange={changeLocationHandler}
+                  id="golfdistrict"
+                  placeholder="Golf District"
+                  name="golfdistrict"
+                  value={user.locationId}
+                  onChange={changeDistrictHandler}
                 >
-                  <option value="1">Stockholm</option>
-                  <option value="2">Göteborg</option>
-                  <option value="3">Malmö</option>
+                  {districts.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.district}
+                    </option>
+                  ))}
+                </Form.Select>
+              </FloatingLabel>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formClub">
+              <FloatingLabel label="Golf Club" className="mb-3">
+                <Form.Select
+                  id="golfclubs"
+                  placeholder="Golf Club"
+                  name="golfclubs"
+                  value={user.golfClubId}
+                  onChange={changeGolfClubHandler}
+                >
+                  {golfclubs.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.club}
+                    </option>
+                  ))}
                 </Form.Select>
               </FloatingLabel>
             </Form.Group>

@@ -1,16 +1,17 @@
-label, input, button {
-    margin: 10px;
-    padding: 5px;
+input,
+button {
+  margin: 10px;
+  padding: 5px;
 }
 
 footer {
-    bottom: 0;
-    position: relative;
-    width: 90%;
-    height: 40px;
+  bottom: 0;
+  position: relative;
+  width: 90%;
+  height: 40px;
 }
 
-img{
-    height: 800px;
-    width: 1200px;
+img {
+  height: 800px;
+  width: 1200px;
 }
