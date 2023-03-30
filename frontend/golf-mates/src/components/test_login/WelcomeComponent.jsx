@@ -173,7 +173,7 @@ useEffect(
               
                 {" "}
                 <h1 className="HomeH1">Welcome {username}</h1>
-              </h3>
+              
               <h2>Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
