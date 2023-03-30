@@ -7,6 +7,7 @@ import LoginComponent from "./LoginComponent";
 import AuthProvider, { useAuth } from "../security/AuthContext";
 import SignupComponent from "./SignupComponent";
 
+
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
 
