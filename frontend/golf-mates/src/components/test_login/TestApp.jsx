@@ -5,7 +5,7 @@ import ErrorComponent from "./ErrorComponent";
 import WelcomeComponent from "./WelcomeComponent";
 import LoginComponent from "./LoginComponent";
 import AuthProvider, { useAuth } from "../security/AuthContext";
-import SignupComponent from "./SignupComponent";
+import SignupComponent from "./signup/SignupComponent";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
