@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+import "./components/landing/style/flexboxgrid.min.css";
+import "./components/landing/style/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
