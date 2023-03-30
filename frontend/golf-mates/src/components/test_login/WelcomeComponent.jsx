@@ -153,7 +153,7 @@ useEffect(
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1>Welcome {username}</h1>
+              <h1 className="HomeH1">Welcome {username}</h1>
               <h2>Who will you play?</h2>
             </Carousel.Caption>
             <img
@@ -172,8 +172,8 @@ useEffect(
             <Carousel.Caption>
               
                 {" "}
-                <h1>Welcome {username}</h1>
-              
+                <h1 className="HomeH1">Welcome {username}</h1>
+              </h3>
               <h2>Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
