@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import UserService from "../../UserService";
+import UserService from "../../UserService";
 import Button from "react-bootstrap/Button";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
@@ -18,7 +18,7 @@ function SignupComponent() {
     username: "",
     password: "",
     handicap: "",
-    location: 1,
+    locationId: 1,
   });
 
   const handleSubmit = (event) => {
@@ -28,6 +28,7 @@ function SignupComponent() {
       event.stopPropagation();
     } else {
       console.log(user);
+      UserService.registerUser(user);
     }
     event.preventDefault();
     setValidated(true);
@@ -42,7 +43,10 @@ function SignupComponent() {
   };
 
   const changeHandicapHandler = (event) => {
-    setUser((prevState) => ({ ...prevState, handicap: event.target.value }));
+    setUser((prevState) => ({
+      ...prevState,
+      handicap: parseFloat(event.target.value),
+    }));
   };
 
   const changeRepeatPasswordHandler = (event) => {
@@ -58,7 +62,10 @@ function SignupComponent() {
   };
 
   const changeLocationHandler = (event) => {
-    setUser((prevState) => ({ ...prevState, location: event.target.value }));
+    setUser((prevState) => ({
+      ...prevState,
+      location: parseInt(event.target.value),
+    }));
   };
 
   return (

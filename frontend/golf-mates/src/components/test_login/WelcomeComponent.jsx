@@ -1,5 +1,5 @@
-import { useParams, Link } from "react-router-dom";
-import { useState } from "react";
+import { useParams, Link, json } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { useAuth } from "../security/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./home.css";
@@ -8,55 +8,133 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import { updateUserInfoApi } from "../api/AppApiService";
+import Image from 'react-bootstrap/Image'
+const hello = "Greetings!";
+const name = "Robin";
+
+
+
+
 
 function WelcomeComponent(props) {
+
+
+
+
   const authContext = useAuth();
-
+  const {username} = useParams();
   const isAuthenticated = authContext.isAuthenticated;
+  const [message, setMessage] = useState(null);
 
-  function logout() {
+  const[Id, setId] = useState(0)
+  const[Username, setUsername] = useState('')
+  const[location, setLocation] = useState('')
+  const[handicap, setHandicap] = useState(0.0)
+
+  const user = {
+    Id: Id,
+    Username: Username,
+    location: location,
+    handicap: handicap,
+    }
+
+
+function successfulResponse(response) {
+
+setId(response.data.id)
+
+setUsername(response.data.username)
+
+setLocation(response.data.location)
+
+setHandicap(response.data.handicap)
+
+}
+
+
+useEffect(
+  () => {getUser()}, username
+)
+
+
+    function logout() {
     authContext.logout();
   }
 
-  const { username } = useParams();
 
-  const [handicap, setHandicap] = useState("5");
+
+  // const [user1, setUser] = useState({});
+    function getUser(){
+    updateUserInfoApi(username).then(response => successfulResponse(response))
+    .catch(error => console.log("error"))
+    .finally(() => console.log('cleanup') )
+    console.log(user)
+  }  
+
+ 
+
+
+
+/*  
   function handleHandicapChange(event) {
     setHandicap(event.target.value);
-  }
-
-  const [location, setLocation] = useState("");
+  } */
+/* 
+  const [location, setLocation] = useState();
   function handleLocationChange(event) {
     setLocation(event.target.value);
-  }
+  } */
 
-  const [message, setMessage] = useState(null);
+
+ 
+
+
 
   return (
     <div className="welcomepage">
       <div className="WelcomeComponent">
         {/* - <Link to="/">Go here</Link> */}
-        <br></br>
-        Current Location:
+       
+      
+        <Image className="profilepic"
+        src=
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU"
+        
+      />
+       {username}
+       <br />
         <br />
+        Current Golf District:
+        <br />
+        {user.location}
+{/*         <select
+          placeholder="Location"
+          name="location"
+          // onChange={handleLocationChange}
+        >
+          <option value={user.location}>{user.location}</option>
+          <option value="2">Hej</option>
+          <option value="3">Malmö</option>
+        </select> */}
+{/*         <br />
+        Current Club: <br />
         <select
           placeholder="Location"
           name="location"
-          onChange={handleLocationChange}
+          // onChange={handleLocationChange}
         >
           <option value="1">Stockholm</option>
-          <option value="2">Göteborg</option>
+          <option value="2">Hej</option>
           <option value="3">Malmö</option>
-        </select>
+        </select> */}
         <div>
           <br />
           Current Handicap: <br />
-          <input
-            type="text"
-            name="handicap"
-            value={handicap}
-            onChange={handleHandicapChange}
-          />
+          {user.handicap}
+         
+        
+          
           <br />
           <div className="mb-2">
             <Button variant="primary" size="lg">
@@ -92,10 +170,10 @@ function WelcomeComponent(props) {
             />
 
             <Carousel.Caption>
-              <h3>
+              
                 {" "}
                 <h1>Welcome {username}</h1>
-              </h3>
+              
               <h2>Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
@@ -107,10 +185,10 @@ function WelcomeComponent(props) {
             />
 
             <Carousel.Caption>
-              <h2>
+              
                 {" "}
                 <h1>Welcome {username}</h1>
-              </h2>
+              
               <h2>What will you experience?</h2>
             </Carousel.Caption>
           </Carousel.Item>
@@ -173,8 +251,8 @@ function WelcomeComponent(props) {
                   )}
                 </Card.Title>
                 <Card.Text>
-                  Adjust your filter to get in contact with golfers in a certain
-                  area or with a specific skill range.
+                  Adjust your handicap or location to get in contact with golfers in a certain
+                  area or in a specific skill range.
                 </Card.Text>
               </Card.Body>
             </Card>
