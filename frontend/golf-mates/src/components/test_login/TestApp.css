@@ -5,7 +5,7 @@ label, input, button {
 
 footer {
     bottom: 0;
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 40px;
 }

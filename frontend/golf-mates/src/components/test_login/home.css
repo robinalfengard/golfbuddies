@@ -62,11 +62,11 @@ img{
     border-radius: 20px;
    
 }
-h1 {
-    color: rgb(252, 241, 241);
+.HomeH1 {
+    color: rgb(255, 255, 255);
 }
 h2 {
-    color: rgb(252, 241, 241);
+    color: rgb(255, 255, 255);
 }
 .card-img{
     height: 350px;

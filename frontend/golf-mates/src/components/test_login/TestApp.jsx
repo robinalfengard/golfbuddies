@@ -7,7 +7,6 @@ import LoginComponent from './LoginComponent';
 import AuthProvider, { useAuth } from '../security/AuthContext';
 import SignupComponent from "./SignupComponent";
 import BookingComponent from './Booking/BookingComponent';
-import SignupComponent from "./SignupComponent";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
@@ -25,7 +24,6 @@ export default function TestApp() {
                     <HeaderComponent />
                     <Routes>
                     <Route path='/homePage' element={ <BookingComponent /> } />
-                    <Route path="/" element={<SignupComponent />} />
             <Route path="/signup" element={<SignupComponent />} />
             <Route path="/login" element={<LoginComponent />} />
                         

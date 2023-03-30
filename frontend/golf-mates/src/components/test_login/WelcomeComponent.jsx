@@ -75,7 +75,7 @@ function WelcomeComponent(props) {
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1>Welcome {username}</h1>
+              <h1 className="HomeH1">Welcome {username}</h1>
               <h2>Who will you play?</h2>
             </Carousel.Caption>
             <img
@@ -94,7 +94,7 @@ function WelcomeComponent(props) {
             <Carousel.Caption>
               <h3>
                 {" "}
-                <h1>Welcome {username}</h1>
+                <h1 className="HomeH1">Welcome {username}</h1>
               </h3>
               <h2>Where will you play?</h2>
             </Carousel.Caption>
