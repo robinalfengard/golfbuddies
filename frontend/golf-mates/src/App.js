@@ -1,11 +1,13 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TestApp from  './components/test_login/TestApp'
+import BookingComponent from "./components/test_login/Booking/BookingComponent";
+import BookingHeader from "./components/test_login/Booking/BookingHeader";
 
 function App() {
   return (
     <div className="App">
-      <TestApp />
+      <BookingComponent />
+    
     </div>
   );
 }
