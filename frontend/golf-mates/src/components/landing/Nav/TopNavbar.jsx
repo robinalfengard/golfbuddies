@@ -31,7 +31,7 @@ export default function TopNavbar() {
           <Link className="pointer flexNullCenter" to="home" smooth={true}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
-              Golf Buddies
+              Golf Mates
             </h1>
           </Link>
           <BurderWrapper
@@ -62,7 +62,7 @@ export default function TopNavbar() {
                 smooth={true}
                 offset={-80}
               >
-                Erbjudande
+                Golf Mates
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -74,7 +74,7 @@ export default function TopNavbar() {
                 smooth={true}
                 offset={-80}
               >
-                Turneringar
+                Tävlingar
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -86,7 +86,7 @@ export default function TopNavbar() {
                 smooth={true}
                 offset={-80}
               >
-                Nyheter
+                Bokningar
               </Link>
             </li>
             <li className="semiBold font15 pointer">
@@ -122,7 +122,7 @@ export default function TopNavbar() {
             </li>
             <li className="semiBold font15 pointer flexCenter">
               <a
-                href="/"
+                href="/signup"
                 className="radius8 lightBg"
                 style={{ padding: "10px 15px" }}
               >

@@ -12,12 +12,9 @@ export default function Header() {
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div>
-          <h1 className="extraBold font60">Golf Buddies</h1>
+          <h1 className="extraBold font60">Golf Mates</h1>
           <HeaderP className="font13 semiBold">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum.
+            Vi hjälper dig enkelt hitta nya golfvänner. Som om du skräddarsytt dem själv!
           </HeaderP>
           <BtnWrapper>
             <FullButton title="Skapa konto" />
@@ -39,17 +36,14 @@ export default function Header() {
             <div>
               <p className="font15 whiteColor">
                 <em>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  När jag tog grönt kort förra sommaren så ville jag hitta 1-2 nya kompisar att spela golf med. Tack vare Golf Mates så har jag nu, 1 år senare, 10 stycken att välja bland.
                 </em>
               </p>
               <p
                 className="font13 orangeColor textRight"
                 style={{ marginTop: "10px" }}
               >
-                Kundnamn
+                Pelle
               </p>
             </div>
           </QuoteWrapper>
