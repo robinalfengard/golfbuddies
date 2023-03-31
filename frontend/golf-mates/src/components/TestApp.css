@@ -4,6 +4,12 @@ button {
   padding: 5px;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   bottom: 0;
   position: relative;

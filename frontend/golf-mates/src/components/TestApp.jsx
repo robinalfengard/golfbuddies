@@ -8,6 +8,7 @@ import AuthProvider, { useAuth } from "./security/AuthContext";
 import SignupComponent from "./signup/SignupComponent";
 import BookingComponent from "./Booking/BookingComponent";
 import LandingComponent from "./landing/Landing";
+import TopNavbar from "./landing/Nav/TopNavbar";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
@@ -22,7 +23,7 @@ export default function TestApp() {
     <div>
       <AuthProvider>
         <BrowserRouter>
-          <HeaderComponent />
+          <TopNavbar />
           <Routes>
             <Route path="/" element={<LandingComponent />} />
             <Route path="/homePage" element={<BookingComponent />} />
@@ -34,6 +35,7 @@ export default function TestApp() {
               element={
                 <AuthenticatedRoute>
                   <WelcomeComponent />
+                  <BookingComponent />
                 </AuthenticatedRoute>
               }
             />
