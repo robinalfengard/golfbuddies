@@ -139,7 +139,7 @@ useEffect(
           <div className="mb-2">
             <Button variant="primary" size="lg">
               {isAuthenticated && (
-                <Link className="nav-link" to="/logout" onClick={logout}>
+                <Link className="nav-link" to="/HomePage" onClick={logout}>
                   {" "}
                   Find Players!
                 </Link>
