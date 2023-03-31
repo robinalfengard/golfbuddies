@@ -139,7 +139,7 @@ useEffect(
           <div className="mb-2">
             <Button variant="primary" size="lg">
               {isAuthenticated && (
-                <Link className="nav-link" to="/logout" onClick={logout}>
+                <Link className="nav-link" to="/HomePage" onClick={logout}>
                   {" "}
                   Find Players!
                 </Link>
@@ -173,7 +173,7 @@ useEffect(
               
                 {" "}
                 <h1 className="HomeH1">Welcome {username}</h1>
-              </h3>
+              
               <h2>Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
