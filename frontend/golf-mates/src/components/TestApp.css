@@ -1,0 +1,23 @@
+/*input,
+button {
+  margin: 10px;
+  padding: 5px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  bottom: 0;
+  position: relative;
+  width: 90%;
+  height: 40px;
+}
+
+img {
+  height: 800px;
+  width: 1200px;
+}*/
