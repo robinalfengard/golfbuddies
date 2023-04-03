@@ -2,13 +2,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LogoutComponent from "./LogoutComponent";
 import HeaderComponent from "./HeaderComponent";
 import ErrorComponent from "./ErrorComponent";
-import WelcomeComponent from "./WelcomeComponent";
+import WelcomeComponent from "./Home/WelcomeComponent";
 import LoginComponent from "./LoginComponent";
 import AuthProvider, { useAuth } from "./security/AuthContext";
 import SignupComponent from "./signup/SignupComponent";
 import BookingComponent from "./Booking/BookingComponent";
 import LandingComponent from "./landing/Landing";
 import TopNavbar from "./landing/Nav/TopNavbar";
+import ListOfBookings from "./ListOfBookings/ListOfBookings";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
