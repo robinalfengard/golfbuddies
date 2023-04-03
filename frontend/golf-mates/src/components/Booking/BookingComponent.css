@@ -91,3 +91,7 @@ body {
 .booking-form button:hover {
   background-color: #26696e;
 }
+.spel {
+  display: flex;
+  flex-direction: column;
+}

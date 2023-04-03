@@ -1,13 +1,13 @@
 import { useParams, Link, json } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useAuth } from "./security/AuthContext";
+import { useAuth } from "../security/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./home.css";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import { updateUserInfoApi } from "./api/AppApiService";
+import { updateUserInfoApi } from "../api/AppApiService";
 import Image from "react-bootstrap/Image";
 const hello = "Greetings!";
 const name = "Robin";
@@ -71,69 +71,44 @@ function WelcomeComponent(props) {
     <div className="welcomepage">
       <div className="WelcomeComponent">
         {/* - <Link to="/">Go here</Link> */}
-        <Image
-          className="profilepic"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU"
-        />
-        {username}
-        <br />
-        <br />
+        <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU" />
+      <Card.Body>
+        <Card.Title>Welcome {username}!</Card.Title>
+        <Card.Text>
         Current Golf District:
+          <br />
+          {user.location}
+          <br />
+          <br />
+          Current Handicap: 
         <br />
-        {user.location}
-        {/*         <select
-          placeholder="Location"
-          name="location"
-          // onChange={handleLocationChange}
-        >
-          <option value={user.location}>{user.location}</option>
-          <option value="2">Hej</option>
-          <option value="3">Malmö</option>
-        </select> */}
-        {/*         <br />
-        Current Club: <br />
-        <select
-          placeholder="Location"
-          name="location"
-          // onChange={handleLocationChange}
-        >
-          <option value="1">Stockholm</option>
-          <option value="2">Hej</option>
-          <option value="3">Malmö</option>
-        </select> */}
-        <div>
-          <br />
-          Current Handicap: <br />
           {user.handicap}
-          <br />
-          <div className="mb-2">
-            <Button variant="primary" size="lg">
-              {isAuthenticated && (
-                <Link className="nav-link" to="/homepage">
-                  {" "}
-                  Find Players!
-                </Link>
-              )}
-            </Button>{" "}
-          </div>
-        </div>
+        </Card.Text>
+        <Button variant="primary"><Link className="nav-link" to="/homepage">
+                
+                Find Players!
+              </Link></Button>
+      </Card.Body>
+    </Card>
+        
         <div className="text-info">{message}</div>
       </div>
       <div>
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              <h1 className="HomeH1">Welcome {username}</h1>
+              
               <h2>Who will you play?</h2>
             </Carousel.Caption>
-            <img
+            <img id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/e8YwQt9.jpg"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
-            <img
+            <img id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/fSO4NjG.jpg"
               alt="Second slide"
@@ -141,12 +116,12 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-              <h1 className="HomeH1">Welcome {username}</h1>
+              
               <h2>Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img
+            <img id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/m6fp4Dr.jpg"
               alt="Third slide"
@@ -154,7 +129,7 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-              <h1>Welcome {username}</h1>
+             
               <h2>What will you experience?</h2>
             </Carousel.Caption>
           </Carousel.Item>
