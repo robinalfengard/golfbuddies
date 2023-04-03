@@ -13,16 +13,15 @@ export default function Contact() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Kontakt</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut
+              Vid frågor eller funderingar kring hur Golf Mates fungerar eller om du har något förslag för förbättring
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              tveka inte att kontakta oss!
             </p>
           </HeaderInfo>
           <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
-                <label className="font13">First name:</label>
+                <label className="font13">Förnamn:</label>
                 <input
                   type="text"
                   id="fname"
@@ -36,7 +35,7 @@ export default function Contact() {
                   name="email"
                   className="font20 extraBold"
                 />
-                <label className="font13">Subject:</label>
+                <label className="font13">Ämne:</label>
                 <input
                   type="text"
                   id="subject"
@@ -69,13 +68,10 @@ export default function Contact() {
                 <ContactImgBox>
                   <img src={ContactImg1} alt="office" className="radius6" />
                 </ContactImgBox>
-                <ContactImgBox>
-                  <img src={ContactImg2} alt="office" className="radius6" />
-                </ContactImgBox>
               </div>
               <div style={{ width: "50%" }}>
                 <div style={{ marginTop: "100px" }}>
-                  <img src={ContactImg3} alt="office" className="radius6" />
+                  <img src={ContactImg1} alt="office" className="radius6" />
                 </div>
               </div>
             </div>
@@ -132,7 +128,8 @@ const ButtonInput = styled.input`
   }
 `;
 const ContactImgBox = styled.div`
-  max-width: 180px;
+  object-fit: cover;
+  max-width: 900px;
   align-self: flex-end;
   margin: 10px 30px 10px 0;
 `;

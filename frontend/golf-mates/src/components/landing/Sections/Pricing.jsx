@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import styled from "styled-components";
 // Components
 import PricingTable from "../Elements/PricingTable";
@@ -95,7 +95,7 @@ const TableBox = styled.div`
     margin: 0 auto
   }
 `;
-
+*/
 
 
 

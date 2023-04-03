@@ -27,12 +27,12 @@ export default function Contact() {
                 className="font15 extraBold whiteColor"
                 style={{ marginLeft: "15px" }}
               >
-                Golf Buddies
+                Golf Mates
               </h1>
             </Link>
             <StyleP className="whiteColor font13">
               © {getCurrentYear()} -{" "}
-              <span className="purpleColor font13">Golf Buddies</span> All Right
+              <span className="purpleColor font13">Golf Mates</span> All Right
               Reserved
             </StyleP>
 

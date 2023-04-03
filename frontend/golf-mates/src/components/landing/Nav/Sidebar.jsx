@@ -12,7 +12,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
         <div className="flexNullCenter">
           <LogoIcon />
           <h1 className="whiteColor font20" style={{ marginLeft: "15px" }}>
-            Golf Buddies
+            Golf Mates
           </h1>
         </div>
         <CloseBtn
@@ -49,7 +49,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             smooth={true}
             offset={-60}
           >
-            Erbjudande
+            Golf Mates
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -63,7 +63,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             smooth={true}
             offset={-60}
           >
-            Turneringar
+            Tävlingar
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -77,7 +77,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             smooth={true}
             offset={-60}
           >
-            Nyheter
+            Bokningar
           </Link>
         </li>
         <li className="semiBold font15 pointer">

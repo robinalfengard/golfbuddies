@@ -18,36 +18,33 @@ export default function Projects() {
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Turneringar</h1>
+            <h1 className="font40 extraBold">Aktuella tävlingar</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              Få en överblick över de aktuella tävlingar som finns tillgängliga.
             </p>
           </HeaderInfo>
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg1}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Ullna GK 4/5"
+                text="Öppen för dig som bor i Stockholm. Maxhandikapp 12."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg2}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                img={ProjectImg1}
+                title="Hagge GK 8/6"
+                text="Öppen för hela Sverige. Maxhandikapp 36."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg3}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                img={ProjectImg1}
+                title="Ladies day out! Haninge GK 9/6"
+                text="Öppen för hela Sverige. Endast damer. Maxhandikapp 36."
                 action={() => alert("clicked")}
               />
             </div>
@@ -55,25 +52,25 @@ export default function Projects() {
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg4}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                img={ProjectImg1}
+                title="Partävling! Gävle GK 10/7"
+                text="Spelform Scramble. Öppen för dig som bor i Gästrike-Hälsingland. Endast herrar. Maxhandikapp 20. "
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg5}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                img={ProjectImg1}
+                title="Två generationer! Uppsala GK 12/7"
+                text="Spelform Greensome. Öppen för hela Sverige. Maxhandikapp 36."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
-                img={ProjectImg6}
-                title="Turnering"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                img={ProjectImg1}
+                title="Halmstad GK 8/8"
+                text="Scratchtävling. Öppen för hela Sverige. Maxhandikapp 5"
                 action={() => alert("clicked")}
               />
             </div>
@@ -96,13 +93,11 @@ export default function Projects() {
               </AddLeftInner>
             </AddLeft>
             <AddRight>
-              <h4 className="font15 semiBold">Om oss</h4>
               <h2 className="font40 extraBold">Vårt mål</h2>
               <p className="font12">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum.
+                Målet var att skapa en plattform för golfaren, en som söker efter en perfekt golfpartner. Vi tror på att en golfupplevelse blir roligare och mer givande genom att kunna hitta en perfekt golfpartner. Med hjälp av vår matchningsteknik kan du snabbt hitta en golfare som passar din spelstil och preferenser.
+
+                Vi tror även på hållbarhet, därför skapade vi plattformen med hållbarhet i fokus. Vi jobbar aktivt med att minska miljöpåverkan och uppmuntrar våra användare att göra samma sak.
               </p>
               <ButtonsRow
                 className="flexNullCenter"
@@ -206,6 +201,7 @@ const ImgWrapper = styled.div`
   img {
     width: 100%;
     height: auto;
+    margin-top: 30%
   }
   @media (max-width: 400px) {
     padding: 0;

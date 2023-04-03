@@ -16,41 +16,36 @@ export default function Services() {
       <div className="whiteBg" style={{ padding: "60px 0" }}>
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Vad vi erbjuder</h1>
+            <h1 className="font40 extraBold">Hur funkar Golf Mates?</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut
+              Hos oss kan du enkelt skapa en profil och direkt börja leta efter andra användare att boka in golfrundor med.
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              Vem du väljer att spela med är upp till dig!
             </p>
           </HeaderInfo>
           <ServiceBoxRow className="flex">
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="roller"
-                title="Erbjudande 1"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                title="Skapa konto"
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
-                title="Erbjudande 2"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore."
+                title="Fyll i dina uppgifter"
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="browser"
-                title="Erbjudande 3"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
+                title="Lägg ut en annons"
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="printer"
-                title="Erbjudande 4"
-                subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Boka golfrundan"
               />
             </ServiceBoxWrapper>
           </ServiceBoxRow>
@@ -60,12 +55,9 @@ export default function Services() {
             <Advertising className="flexSpaceCenter">
               <AddLeft>
                 <h4 className="font15 semiBold">Om oss</h4>
-                <h2 className="font40 extraBold">Golf Buddies</h2>
+                <h2 className="font40 extraBold">Golf Mates</h2>
                 <p className="font12">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                  justo duo dolores et ea rebum.
+                  Vi möjliggör det enkelt för dig som användare att hitta nya golfvänner baserat på din skicklighetsnivå samt vilket distrikt du bor i. Enkelt, snabbt och framförallt kul!
                 </p>
                 <ButtonsRow
                   className="flexNullCenter"

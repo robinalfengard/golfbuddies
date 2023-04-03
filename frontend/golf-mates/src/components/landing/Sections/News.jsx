@@ -11,38 +11,34 @@ export default function Blog() {
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Nyheter</h1>
+            <h1 className="font40 extraBold">Senaste bokade rundorna</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+              Här kan du se de senaste bokade golfrundorna av våra användare
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
             </p>
           </HeaderInfo>
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Johannesbergs GK"
+                tag="Olle & Stefan"
+                author="10 minuter sen"
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Arninge GK"
+                tag="Stina, Frida & Greta"
+                author="26 minuter sen"
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Ystad GK"
+                tag="Leif & Anders"
+                author="56 minuter sen"
                 action={() => alert("clicked")}
               />
             </div>
@@ -50,28 +46,25 @@ export default function Blog() {
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Sand GK"
+                tag="Urban & Johanna"
+                author="1 timme sen"
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Bro Hof GK"
+                tag="Lotta, Märta, Per & Niklas"
+                author="1 dag sen"
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
-                title="Ny golfbana!"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                tag="Företag"
-                author="Användare, 2 dagar sen"
+                title="Trummenäs GK"
+                tag="Paul & Martin"
+                author="1 dag"
                 
                 action={() => alert("clicked")}
               />
@@ -89,9 +82,7 @@ export default function Blog() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Kundomdömen</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              
             </p>
           </HeaderInfo>
           <TestimonialSlider />
