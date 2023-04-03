@@ -71,44 +71,49 @@ function WelcomeComponent(props) {
     <div className="welcomepage">
       <div className="WelcomeComponent">
         {/* - <Link to="/">Go here</Link> */}
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU" />
-      <Card.Body>
-        <Card.Title>Welcome {username}!</Card.Title>
-        <Card.Text>
-        Current Golf District:
-          <br />
-          {user.location}
-          <br />
-          <br />
-          Current Handicap: 
-        <br />
-          {user.handicap}
-        </Card.Text>
-        <Button variant="primary"><Link className="nav-link" to="/homepage">
-                
+        <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU"
+          />
+          <Card.Body>
+            <Card.Title>Welcome {username}!</Card.Title>
+            <Card.Text>
+              Current Golf District:
+              <br />
+              {user.location}
+              <br />
+              <br />
+              Current Handicap:
+              <br />
+              {user.handicap}
+            </Card.Text>
+            <Button variant="primary">
+              <Link className="nav-link" to="/homepage">
                 Find Players!
-              </Link></Button>
-      </Card.Body>
-    </Card>
-        
+              </Link>
+            </Button>
+          </Card.Body>
+        </Card>
+
         <div className="text-info">{message}</div>
       </div>
       <div>
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              
-              <h2>Who will you play?</h2>
+              <h2 className="HomeH2">Who will you play?</h2>
             </Carousel.Caption>
-            <img id="carPic"
+            <img
+              id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/e8YwQt9.jpg"
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
-            <img id="carPic"
+            <img
+              id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/fSO4NjG.jpg"
               alt="Second slide"
@@ -116,12 +121,12 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-              
-              <h2>Where will you play?</h2>
+              <h2 className="HomeH2">Where will you play?</h2>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img id="carPic"
+            <img
+              id="carPic"
               className="d-block w-100"
               src="https://wallpapercave.com/dwp2x/m6fp4Dr.jpg"
               alt="Third slide"
@@ -129,8 +134,7 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-             
-              <h2>What will you experience?</h2>
+              <h2 className="HomeH2">What will you experience?</h2>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

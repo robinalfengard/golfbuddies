@@ -52,24 +52,24 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.booking-form {
+.booking-Form {
   display: flex;
   flex-direction: column;
 }
 
-.booking-form h2 {
+.booking-Form h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   color: rgb(0, 0, 0);
 }
 
-.booking-form label {
+.booking-Form label {
   font-size: 1.2rem;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.booking-form input {
+.booking-Form input {
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -77,7 +77,7 @@ body {
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.booking-form button {
+.booking-Form button {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -88,7 +88,7 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-.booking-form button:hover {
+.booking-Form button:hover {
   background-color: #26696e;
 }
 .spel {

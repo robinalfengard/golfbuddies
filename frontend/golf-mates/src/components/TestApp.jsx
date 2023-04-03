@@ -9,7 +9,6 @@ import SignupComponent from "./signup/SignupComponent";
 import BookingComponent from "./Booking/BookingComponent";
 import LandingComponent from "./landing/Landing";
 import TopNavbar from "./landing/Nav/TopNavbar";
-import ListOfBookings from "./ListOfBookings/ListOfBookings";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
