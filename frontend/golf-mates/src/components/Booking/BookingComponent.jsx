@@ -18,6 +18,7 @@ function BookingComponent(props) {
 
   const [forminput, setForminput] = useState([{}]);
 
+
   useEffect(() => {
     getDistrictList();
   }, []);
@@ -94,7 +95,7 @@ function BookingComponent(props) {
             className="booking-form"
             onSubmit={handleSubmit}
           >
-            <h2>Find A Golf Mate</h2>
+            <h2>Skapa en spelannons!</h2>
             <Form.Group className="mb-3" controlId="formLocation">
               <FloatingLabel label="Golf district" className="mb-3">
                 <Form.Select
@@ -131,6 +132,7 @@ function BookingComponent(props) {
             </Form.Group>
 
             <label>Tee Time?</label>
+            <br />
             <input
               type="datetime-local"
               name="teeTime"
@@ -139,7 +141,7 @@ function BookingComponent(props) {
               onChange={handleInputChange}
               required
             />
-
+            
             <Form.Group className="mb-3" controlId="formClub">
               <Form.Label>Har du bil?</Form.Label>
               <Form.Check
@@ -148,7 +150,7 @@ function BookingComponent(props) {
                 id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
-                required
+               
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formClub">

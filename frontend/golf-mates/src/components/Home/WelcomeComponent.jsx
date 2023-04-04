@@ -72,25 +72,22 @@ function WelcomeComponent(props) {
       <div className="WelcomeComponent">
         {/* - <Link to="/">Go here</Link> */}
         <Card style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKBbsIrEdbfo4DHs_DmJiPSx4BDThw-0isw&usqp=CAU"
-          />
+
           <Card.Body>
             <Card.Title>Welcome {username}!</Card.Title>
             <Card.Text>
-              Current Golf District:
+              Nuvarande Distrikt:
               <br />
               {user.location}
               <br />
               <br />
-              Current Handicap:
+              Nuvarande Handicap:
               <br />
               {user.handicap}
             </Card.Text>
             <Button variant="primary">
               <Link className="nav-link" to="/homepage">
-                Find Players!
+                Hitta spelare!
               </Link>
             </Button>
           </Card.Body>
@@ -102,7 +99,7 @@ function WelcomeComponent(props) {
         <Carousel>
           <Carousel.Item>
             <Carousel.Caption>
-              <h2 className="HomeH2">Who will you play?</h2>
+              <h2 className="HomeH2">Träffa nya vänner!</h2>
             </Carousel.Caption>
             <img
               id="carPic"
@@ -121,7 +118,7 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-              <h2 className="HomeH2">Where will you play?</h2>
+              <h2 className="HomeH2">Upplev nya platser!</h2>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -134,7 +131,7 @@ function WelcomeComponent(props) {
 
             <Carousel.Caption>
               {" "}
-              <h2 className="HomeH2">What will you experience?</h2>
+              <h2 className="HomeH2">Spela mer golf!</h2>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
@@ -151,13 +148,13 @@ function WelcomeComponent(props) {
                 <Card.Title>
                   {isAuthenticated && (
                     <Link className="nav-link" to="/logout" onClick={logout}>
-                      Bookings
+                      Bokningar
                     </Link>
                   )}
                 </Card.Title>
                 <Card.Text>
-                  Check your upcoming schedule of golf matches, and connect with
-                  golfers from all over Sweden!
+                  Se dina planerade golfmatcher och få kontakt med golfspelare över hela Sverige!
+                
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -171,13 +168,12 @@ function WelcomeComponent(props) {
                 <Card.Title>
                   {isAuthenticated && (
                     <Link className="nav-link" to="/logout" onClick={logout}>
-                      Match History
+                      Match-Historik
                     </Link>
                   )}
                 </Card.Title>
                 <Card.Text>
-                  See your previous results and get contact information from
-                  golfers you've previously been matched with.
+                  Se tidigare resultat och ta kontakt med golfare som du tidigare spelat med.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -191,13 +187,12 @@ function WelcomeComponent(props) {
                 <Card.Title>
                   {isAuthenticated && (
                     <Link className="nav-link" to="/logout" onClick={logout}>
-                      Settings and Filter
+                      Inställningar
                     </Link>
                   )}
                 </Card.Title>
                 <Card.Text>
-                  Adjust your handicap or location to get in contact with
-                  golfers in a certain area or in a specific skill range.
+                  Justera ditt handicap och din plats för att kommma i kontakt med golfare från ett visst område eller med en viss skicklighet.
                 </Card.Text>
               </Card.Body>
             </Card>

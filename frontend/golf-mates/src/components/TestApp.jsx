@@ -9,6 +9,7 @@ import SignupComponent from "./signup/SignupComponent";
 import BookingComponent from "./Booking/BookingComponent";
 import LandingComponent from "./landing/Landing";
 import TopNavbar from "./landing/Nav/TopNavbar";
+import ListOfBookings from "./Booking/ListOfBookings";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
@@ -35,7 +36,9 @@ export default function TestApp() {
               element={
                 <AuthenticatedRoute>
                   <WelcomeComponent />
+                  <ListOfBookings/>
                   <BookingComponent />
+                  
                 </AuthenticatedRoute>
               }
             />
