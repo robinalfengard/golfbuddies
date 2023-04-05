@@ -42,18 +42,23 @@ function ListOfBookings(props) {
                   <Card.Title>Bokning #{i + 1}</Card.Title>
                   <Card.Text>
                     <span> Golfklubb : {c.golfClub.club}</span>
-                    <span> Handicap : {c.handicap}</span>
                     <span> Tillgängliga Platser : {c.emptySlots}</span>
-                    <span> Tee Time : {c.playTime}</span>
+                    <span>
+                      {" "}
+                      Tee Time :{" "}
+                      {JSON.stringify(c.playTime)
+                        .slice(1, 17)
+                        .replace("T", " ")}
+                    </span>
                     <span>
                       {" "}
                       Samåkningsmöjlighet : {c.hasCar ? "Ja" : "Nej"}
                     </span>
                     <br />
-                    <h4>Spelare{" "}</h4>
+                    <h4>Spelare </h4>
                     {c.players.map((c, i) => (
                       <span>
-                        Spelare {i + 1} : {c} 
+                        Spelare {i + 1} : {c}
                       </span>
                     ))}
                     <Button onClick={() => bookPlaySlot(c.id)}>

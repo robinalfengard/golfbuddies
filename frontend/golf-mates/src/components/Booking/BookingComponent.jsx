@@ -16,9 +16,8 @@ function BookingComponent(props) {
   const [booking, setBooking] = useState([]);
   const [districts, setDistricts] = useState([{}]);
   const [golfclubs, setGolfclubs] = useState([]);
-  const {username} = useParams();
-  const [forminput, setForminput] = useState({"username" : username});
-
+  const { username } = useParams();
+  const [forminput, setForminput] = useState({ username: username });
 
   useEffect(() => {
     getDistrictList();
@@ -39,9 +38,7 @@ function BookingComponent(props) {
       setGolfclubs(response.data);
     });
   }
-  
-  
- 
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -146,7 +143,7 @@ function BookingComponent(props) {
               onChange={handleInputChange}
               required
             />
-            
+
             <Form.Group className="mb-3" controlId="formClub">
               <Form.Label>Har du bil?</Form.Label>
               <Form.Check
@@ -155,28 +152,12 @@ function BookingComponent(props) {
                 id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
-               
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formClub">
-              <Form.Label className="mb-3">Handicap </Form.Label>
-              <input
-                min="0"
-                max="36"
-                type="number"
-                name="handicap"
-                id="handicap"
-                value={forminput.handicap}
-                onChange={handleInputChange}
-                required
               />
             </Form.Group>
             <button type="submit">Lägg upp spelförslag</button>
           </Form>
         </div>
       </div>
-
-     
     </>
   );
 }
