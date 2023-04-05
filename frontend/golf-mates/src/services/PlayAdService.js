@@ -10,6 +10,11 @@ class PlayAdService {
   getPlayAds() {
     return axios.get(USER_REST_API_URL);
   }
+
+  updatePlayAd(id, user) {
+    console.log(user);
+    return axios.put(USER_REST_API_URL + id + "/" + user);
+  }
 }
 
 export default new PlayAdService();

@@ -18,7 +18,6 @@ function BookingComponent(props) {
 
   const [forminput, setForminput] = useState([{}]);
 
-
   useEffect(() => {
     getDistrictList();
   }, []);
@@ -141,7 +140,7 @@ function BookingComponent(props) {
               onChange={handleInputChange}
               required
             />
-            
+
             <Form.Group className="mb-3" controlId="formClub">
               <Form.Label>Har du bil?</Form.Label>
               <Form.Check
@@ -150,7 +149,6 @@ function BookingComponent(props) {
                 id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
-               
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formClub">
@@ -172,32 +170,6 @@ function BookingComponent(props) {
       </div>
       <br />
       <br />
-      <div className="spel">
-        <h1> Spelförslag</h1>
-        {
-          <Table striped bordered hover>
-            <tr>
-              <th>Distrikt</th>
-              <th>Har Bil?</th>
-              <th>Tid</th>
-              <th>Golf Klubb</th>
-              <th>Handikap</th>
-            </tr>
-
-            {booking.map((c) => (
-              <tr>
-                <td> {c.locationId}</td>
-                <td>{c.hasCar}</td>
-                <td>{c.teeTime}</td>
-                <td>{c.courseId}</td>
-                <td>{c.handicap}</td>
-                <td></td>
-                <Button>Boka</Button>
-              </tr>
-            ))}
-          </Table>
-        }
-      </div>
     </>
   );
 }

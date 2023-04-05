@@ -36,9 +36,8 @@ export default function TestApp() {
               element={
                 <AuthenticatedRoute>
                   <WelcomeComponent />
-                  <ListOfBookings/>
+                  <ListOfBookings />
                   <BookingComponent />
-                  
                 </AuthenticatedRoute>
               }
             />
