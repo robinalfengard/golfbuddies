@@ -9,6 +9,7 @@ import GolfClubService from "../../services/GolfClubService";
 import PlayAdService from "../../services/PlayAdService";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Footer from "./Footer.jsx";
 
 function BookingComponent(props) {
   const [validated, setValidated] = useState(false);
@@ -131,8 +132,7 @@ function BookingComponent(props) {
               </FloatingLabel>
             </Form.Group>
 
-            <label>Tee Time?</label>
-            <br />
+            <label>Tid:</label>
             <input
               type="datetime-local"
               name="teeTime"
@@ -143,18 +143,17 @@ function BookingComponent(props) {
             />
             
             <Form.Group className="mb-3" controlId="formClub">
-              <Form.Label>Har du bil?</Form.Label>
+              <label>Har du bil?</label>
               <Form.Check
                 type="checkbox"
                 name="hasCar"
                 id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
-               
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formClub">
-              <Form.Label className="mb-3">Handicap </Form.Label>
+              <label className="mb-3">Handikapp: </label>
               <input
                 min="0"
                 max="36"
@@ -166,23 +165,15 @@ function BookingComponent(props) {
                 required
               />
             </Form.Group>
-            <button type="submit">Lägg upp spelförslag</button>
+            <button className="skapaSpelannons row flexcenter" type="submit">Lägg upp spelförslag</button>
           </Form>
         </div>
       </div>
       <br />
       <br />
       <div className="spel">
-        <h1> Spelförslag</h1>
         {
           <Table striped bordered hover>
-            <tr>
-              <th>Distrikt</th>
-              <th>Har Bil?</th>
-              <th>Tid</th>
-              <th>Golf Klubb</th>
-              <th>Handikap</th>
-            </tr>
 
             {booking.map((c) => (
               <tr>
@@ -197,7 +188,9 @@ function BookingComponent(props) {
             ))}
           </Table>
         }
+        <Footer />
       </div>
+      
     </>
   );
 }

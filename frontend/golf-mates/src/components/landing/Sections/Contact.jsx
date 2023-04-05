@@ -18,7 +18,7 @@ export default function Contact() {
               tveka inte att kontakta oss!
             </p>
           </HeaderInfo>
-          <div className="row" style={{ paddingBottom: "30px" }}>
+          <div className="row1" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
                 <label className="font13">Förnamn:</label>
@@ -42,6 +42,7 @@ export default function Contact() {
                   name="subject"
                   className="font20 extraBold"
                 />
+                <label className="font13">Kommentar:</label>
                 <textarea
                   rows="4"
                   cols="50"
@@ -51,15 +52,17 @@ export default function Contact() {
                   className="font20 extraBold"
                 />
               </Form>
-              <SumbitWrapper className="flex">
+              <SumbitWrapper className="flex1">
                 <ButtonInput
-                  type="submit"
+                  type="button"
+                  onClick={() => alert("clicked")}
                   value="Skicka meddelande"
                   className="pointer animate radius8"
                   style={{ maxWidth: "220px" }}
                 />
               </SumbitWrapper>
             </div>
+            
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
               <div
                 style={{ width: "50%" }}
@@ -71,7 +74,7 @@ export default function Contact() {
               </div>
               <div style={{ width: "50%" }}>
                 <div style={{ marginTop: "100px" }}>
-                  <img src={ContactImg1} alt="office" className="radius6" />
+                
                 </div>
               </div>
             </div>
@@ -113,14 +116,14 @@ const Form = styled.form`
 `;
 const ButtonInput = styled.input`
   border: 1px solid #7620ff;
-  background-color: #7620ff;
+  background-color: #001aff;
   width: 100%;
   padding: 15px;
   outline: none;
   color: #fff;
   :hover {
-    background-color: #580cd2;
-    border: 1px solid #7620ff;
+    background-color: #8797e2;
+    border: 1px solid #8797e2;
     color: #fff;
   }
   @media (max-width: 991px) {
@@ -129,9 +132,9 @@ const ButtonInput = styled.input`
 `;
 const ContactImgBox = styled.div`
   object-fit: cover;
-  max-width: 900px;
+  max-width: 300px;
   align-self: flex-end;
-  margin: 10px 30px 10px 0;
+  margin: -700px 30px 10px 0;
 `;
 const SumbitWrapper = styled.div`
   @media (max-width: 991px) {

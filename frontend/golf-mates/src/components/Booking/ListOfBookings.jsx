@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import CardGroup from "react-bootstrap/CardGroup";
 import { func } from "prop-types";
 import { get } from "react-scroll/modules/mixins/scroller";
+import BookingBox from "./BookingBox";
 
 
 function ListOfBookings(props){
@@ -31,29 +32,38 @@ async  function getAllAds(){
 return (
 <Card>
 <Card.Body>
-<Card.Title onClick={getAllAds}>Lediga Bokningar</Card.Title>
-<Card.Text>
+<Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>Lediga Bokningar</Card.Title>
+ {/* <Card.Text> */}
   <br />
   {ads.map((c) => (
-   <Card>
-    <Card.Body>
-    <Card.Title>Bokning</Card.Title>
-    <Card.Text>
-    <span> ID : {c.id}</span>
+    // <Card>
+    //<Card.Body> 
+    //<Card.Text> 
+    <div className="row">
+    <BookingBox 
+    id={`Bokningsnr: ${c.id}`}
+    club={`Klubb: ${c.golfClub.club}`}
+    handicap={`Handikapp: ${c.handicap}`}
+    time={`Tid: ${c.playTime}`}
+    car={`Samåkningsmöjlighet ${c.hasCar?"Ja":"Nej"}`}
+    action={() => alert("clicked")}
+    />
+    
+    </div>
+    ))}
+    {/* <span> ID : {c.id}</span>
     <span> Golfklubb : {c.golfClub.club}</span>
     <span> Handicap : {c.handicap}</span>
     <span> Tillgängliga Platser : {c.emptySlots}</span>
     <span> Tee Time : {c.playTime}</span>
-    <span> Samåkningsmöjlighet : {c.hasCar?"Ja":"Nej"}</span>
-    </Card.Text>
+    <span> Samåkningsmöjlighet : {c.hasCar?"Ja":"Nej"}</span> */}
+    {/* </Card.Text> */}
+    {/* </Card.Body> */}
+    {/* </Card> */}
+    
 
 
-    </Card.Body>
-    </Card>
-    ))}
-
-
-</Card.Text>
+{/* </Card.Text> */}
 
 </Card.Body>
 </Card>

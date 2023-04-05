@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
-import LogoImg from "../assets/svg/Logo";
+import LogoImg from "../landing/assets/svg/Logo";
 
 export default function Contact() {
   const getCurrentYear = () => {
@@ -10,8 +10,8 @@ export default function Contact() {
 
   return (
     <Wrapper>
-      <div className="darkBg">
-        <div className="container">
+      <div className="darkBg1">
+        <div className="container1">
           <InnerWrapper
             className="flexSpaceCenter"
             style={{ padding: "30px 0" }}
@@ -42,7 +42,7 @@ export default function Contact() {
               smooth={true}
               offset={-80}
             >
-              Hem
+              
             </Link>
           </InnerWrapper>
         </div>

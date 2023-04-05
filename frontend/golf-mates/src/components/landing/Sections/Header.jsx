@@ -36,7 +36,7 @@ export default function Header() {
             <div>
               <p className="font15 whiteColor">
                 <em>
-                  När jag tog grönt kort förra sommaren så ville jag hitta 1-2 nya kompisar att spela golf med. Tack vare Golf Mates så har jag nu, 1 år senare, 10 stycken att välja bland.
+                  När jag tog grönt kort förra sommaren så ville jag hitta 1-2 nya kompisar att spela golf med. Tack vare Golf Mates så har jag nu 10 stycken att välja bland.
                 </em>
               </p>
               <p
