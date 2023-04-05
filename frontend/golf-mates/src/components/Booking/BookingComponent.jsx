@@ -9,14 +9,16 @@ import GolfClubService from "../../services/GolfClubService";
 import PlayAdService from "../../services/PlayAdService";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { useParams } from "react-router-dom";
 
 function BookingComponent(props) {
   const [validated, setValidated] = useState(false);
   const [booking, setBooking] = useState([]);
   const [districts, setDistricts] = useState([{}]);
   const [golfclubs, setGolfclubs] = useState([]);
+  const {username} = useParams();
+  const [forminput, setForminput] = useState({"username" : username});
 
-  const [forminput, setForminput] = useState([{}]);
 
   useEffect(() => {
     getDistrictList();
@@ -37,7 +39,9 @@ function BookingComponent(props) {
       setGolfclubs(response.data);
     });
   }
-
+  
+  
+ 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -47,7 +51,9 @@ function BookingComponent(props) {
       forminput.locationId = parseInt(forminput.locationId);
       forminput.handicap = parseFloat(forminput.handicap);
       forminput.golfclub = parseFloat(forminput.golfclub);
+      console.log(forminput.username);
       PlayAdService.registerPlayAd(forminput);
+
       console.log(forminput);
     }
     event.preventDefault();
@@ -140,7 +146,7 @@ function BookingComponent(props) {
               onChange={handleInputChange}
               required
             />
-
+            
             <Form.Group className="mb-3" controlId="formClub">
               <Form.Label>Har du bil?</Form.Label>
               <Form.Check
@@ -149,6 +155,7 @@ function BookingComponent(props) {
                 id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
+               
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formClub">
@@ -168,8 +175,8 @@ function BookingComponent(props) {
           </Form>
         </div>
       </div>
-      <br />
-      <br />
+
+     
     </>
   );
 }
