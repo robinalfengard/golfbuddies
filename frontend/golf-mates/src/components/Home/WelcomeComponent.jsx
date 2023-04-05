@@ -9,8 +9,7 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import { updateUserInfoApi } from "../api/AppApiService";
 import Image from "react-bootstrap/Image";
-const hello = "Greetings!";
-const name = "Robin";
+
 
 function WelcomeComponent(props) {
   const authContext = useAuth();
