@@ -49,10 +49,11 @@ function ListOfBookings(props) {
                       {" "}
                       Samåkningsmöjlighet : {c.hasCar ? "Ja" : "Nej"}
                     </span>
-                    Spelare :{" "}
+                    <br />
+                    <h4>Spelare{" "}</h4>
                     {c.players.map((c, i) => (
                       <span>
-                        Spelare {i + 1} : {c}
+                        Spelare {i + 1} : {c} 
                       </span>
                     ))}
                     <Button onClick={() => bookPlaySlot(c.id)}>
