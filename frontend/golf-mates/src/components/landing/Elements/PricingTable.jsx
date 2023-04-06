@@ -36,7 +36,7 @@ export default function PricingTable({
 
   return (
     <Wrapper className="whiteBg radius8 shadow">
-      <div className="flexSpaceCenter">
+      <div className="flexSpaceCenter1">
         {getIcon}
         <p className="font30 extraBold">{price}</p>
       </div>
@@ -48,7 +48,7 @@ export default function PricingTable({
         {offers
           ? offers.map((item, index) => (
               <div
-                className="flexNullCenter"
+                className="flexNullCenter1"
                 style={{ margin: "15px 0" }}
                 key={index}
               >

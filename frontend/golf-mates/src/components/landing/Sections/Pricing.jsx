@@ -7,11 +7,11 @@ export default function Pricing() {
   return (
     <Wrapper id="pricing">
       <div className="whiteBg">
-        <div className="container">
+        <div className="container1">
           <HeaderInfo>
             <h1 className="font40 extraBold">Prisplan</h1>
           </HeaderInfo>
-          <TablesWrapper className="flexSpaceNull">
+          <TablesWrapper className="flexSpaceNull1">
             <TableBox>
               <PricingTable
                 icon="roller"

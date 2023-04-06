@@ -15,9 +15,11 @@ export default function Blog() {
             <p className="font13">
               Här kan du se de senaste bokade golfrundorna av våra användare
               <br />
+              <br />
+              <br />
             </p>
           </HeaderInfo>
-          <div className="row textCenter">
+          <div className="row textCenter1">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
                 title="Johannesbergs GK"
@@ -43,7 +45,7 @@ export default function Blog() {
               />
             </div>
           </div>
-          <div className="row textCenter">
+          <div className="row textCenter1">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <BlogBox
                 title="Sand GK"
@@ -70,7 +72,7 @@ export default function Blog() {
               />
             </div>
           </div>
-          <div className="row flexCenter">
+          <div className="row flexCenter1">
             <div style={{ margin: "50px 0", width: "200px" }}>
               <FullButton title="Visa mer" action={() => alert("clicked")} />
             </div>
@@ -78,7 +80,7 @@ export default function Blog() {
         </div>
       </div>
       <div className="lightBg" style={{padding: '50px 0'}}>
-        <div className="container">
+        <div className="container1">
           {/* <HeaderInfo>
             <h1 className="font40 extraBold">Kundomdömen</h1>
             <p className="font13">

@@ -44,11 +44,11 @@ export default function TopNavbar(props) {
       <Sidebar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
       {sidebarOpen && <Backdrop toggleSidebar={toggleSidebar} />}
       <Wrapper
-        className="flexCenter animate whiteBg"
+        className="flexCenter1 animate whiteBg"
         style={y > 100 ? { height: "60px" } : { height: "80px" }}
       >
-        <NavInner className="container flexSpaceCenter">
-          <Link className="pointer flexNullCenter" to="home" smooth={true}>
+        <NavInner className="container1 flexSpaceCenter1">
+          <Link className="pointer flexNullCenter1" to="home" smooth={true}>
             <LogoIcon />
             <h1 style={{ marginLeft: "15px" }} className="font20 extraBold">
               Golf Mates
@@ -61,8 +61,8 @@ export default function TopNavbar(props) {
             <BurgerIcon />
           </BurderWrapper>
           {!isAuthenticated && (
-            <UlWrapper className="flexNullCenter">
-              <li className="semiBold font15 pointer">
+            <UlWrapper className="flexNullCenter1">
+              <li className="semiBold font15 pointer1">
                 <Link
                   activeClass="active"
                   style={{ padding: "10px 15px" }}
@@ -137,7 +137,7 @@ export default function TopNavbar(props) {
             </UlWrapper>
           )}
           {!isAuthenticated && (
-            <UlWrapperRight className="flexNullCenter">
+            <UlWrapperRight className="flexNullCenter1">
               <li className="semiBold font15 pointer">
                 <a
                   onClick={(e) => setVisibilitylogin(!visibilitylogin)}
@@ -153,7 +153,7 @@ export default function TopNavbar(props) {
                   <h1>Test</h1>
                 </LoginComponent>
               </li>
-              <li className="semiBold font15 pointer flexCenter">
+              <li className="semiBold font15 pointer flexCenter1">
                 <a
                   onClick={(e) => setVisibilitysignup(!visibilitysignup)}
                   className="radius8 lightBg"
@@ -198,7 +198,7 @@ export default function TopNavbar(props) {
             </UlWrapper>
           )}
           {isAuthenticated && (
-            <UlWrapperRight className="flexNullCenter">
+            <UlWrapperRight className="flexNullCenter1">
               <li className="semiBold font15 pointer">
                 <li className="nav-item">
                   <Link className="nav-link" to="/logout" onClick={logout}>

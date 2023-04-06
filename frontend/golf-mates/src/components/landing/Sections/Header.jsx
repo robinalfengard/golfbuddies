@@ -9,8 +9,8 @@ import Dots from "../assets/svg/Dots";
 
 export default function Header() {
   return (
-    <Wrapper id="home" className="container flexSpaceCenter">
-      <LeftSide className="flexCenter">
+    <Wrapper id="home" className="container1 flexSpaceCenter1">
+      <LeftSide className="flexCenter1">
         <div>
           <h1 className="extraBold font60">Golf Mates</h1>
           <HeaderP className="font13 semiBold">
@@ -29,7 +29,7 @@ export default function Header() {
             alt="office"
             style={{ zIndex: 9 }}
           />
-          <QuoteWrapper className="flexCenter darkBg radius8">
+          <QuoteWrapper className="flexCenter1 darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />
             </QuotesWrapper>
@@ -40,7 +40,7 @@ export default function Header() {
                 </em>
               </p>
               <p
-                className="font13 orangeColor textRight"
+                className="font13 orangeColor textRight1"
                 style={{ marginTop: "10px" }}
               >
                 Pelle

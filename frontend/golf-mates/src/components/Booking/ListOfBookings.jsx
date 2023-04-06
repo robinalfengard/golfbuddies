@@ -31,48 +31,48 @@ function ListOfBookings(props) {
   }
 
   return (
-      <Card>
-        <Card.Body>
-          <Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>Lediga Bokningar</Card.Title>
- 
-            <br />
-            {ads.map((c, i) => (
-              <div className="row">
-              <BookingBox
+    <Card>
+      <Card.Body>
+        <Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>Lediga Bokningar</Card.Title>
+        <button className="font30 extraBold greenColor" onClick={getAllAds}>Uppdatera listan</button>
 
-               id={`Bokningsnr: ${c.id}`}
-              
-               club={`Klubb: ${c.golfClub.club}`}
-              
-              
-              
-               time={`Tid: ${JSON.stringify(c.playTime)
+        <br />
+        {ads.map((c, i) => (
+          <div className="row">
+            <BookingBox
+
+              id={`Bokningsnr: ${c.id}`}
+
+              club={`Klubb: ${c.golfClub.club}`}
+
+
+
+              time={`Tid: ${JSON.stringify(c.playTime)
                 .slice(1, 17)
                 .replace("T", " ")}`}
-              
-               car={`Samåkningsmöjlighet ${c.hasCar?"Ja":"Nej"}`}
 
-               players={`Spelare 1: ${c.players[0]}`}
-             
-               players2={`Spelare 2: ${c.players[1]}`}
-               players3={`Spelare 3: ${c.players[2]}`}
-               players4={`Spelare 4: ${c.players[3]}`}
-              
-               action={() => bookPlaySlot(c.id)}
-              
-               />
-              </div>
+              car={`Samåkningsmöjlighet ${c.hasCar ? "Ja" : "Nej"}`}
 
-     
-                    ))}
-                    </Card.Body>
+              players={`Spelare 1: ${c.players[0]}`}
+              players2={`Spelare 2: ${c.players[1] == undefined ? "Ledig Plats" : c.players[1]}`}
+              players3={`Spelare 3: ${c.players[2] == undefined ? "Ledig Plats" : c.players[2]}`}
+              players4={`Spelare 4: ${c.players[3] == undefined ? "Ledig Plats" : c.players[3]}`}
 
-                    </Card>
-                    );
-                    }
-           
-            
-    
-    
+              action={() => bookPlaySlot(c.id)}
+
+            />
+          </div>
+
+
+        ))}
+      </Card.Body>
+
+    </Card>
+  );
+}
+
+
+
+
 
 export default ListOfBookings;
