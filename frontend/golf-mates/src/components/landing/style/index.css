@@ -162,7 +162,7 @@ body {
 }
 
 /* HELLPERS */
-.textCenter {
+.textCenter1 {
   text-align: center;
 }
 .animate {
@@ -174,13 +174,13 @@ body {
 .relative {
   position: relative;
 }
-.textCenter {
+.textCenter1 {
   text-align: center;
 }
 .textLeft {
   text-align: left;
 }
-.textRight {
+.textRight1 {
   text-align: right;
 }
 .x100 {
@@ -200,27 +200,27 @@ body {
   -moz-box-shadow: 0 0 11px rgba(237, 232, 237, 0.5);
 }
 /* FLEXBOX */
-.flex {
+.flex1 {
   display: flex;
 }
-.flexSpaceCenter {
+.flexSpaceCenter1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.flexNullCenter {
+.flexNullCenter1 {
   display: flex;
   align-items: center;
 }
-.flexColumn {
+.flexColumn1 {
   flex-direction: column;
 }
-.flexCenter {
+.flexCenter1 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.flexSpaceNull {
+.flexSpaceNull1 {
   display: flex;
   justify-content: space-between;
 }
@@ -320,7 +320,7 @@ body {
   color: #c4ffff;
 }
 .greenColor {
-  color: #49cb86;
+  color: #14d870;
 }
 .greyColor {
   color: #707070;
@@ -342,7 +342,7 @@ body {
   background-color: #f2b300;
 }
 .lightBg {
-  background-color: #86ac7f;
+  background-color: #cdddca;
 }
 .coralBg {
   background-color: #c4ffff;

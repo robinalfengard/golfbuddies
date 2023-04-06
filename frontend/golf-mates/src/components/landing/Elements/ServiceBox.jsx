@@ -25,7 +25,7 @@ export default function ServiceBox({ icon, title, subtitle }) {
   }
 
   return (
-    <Wrapper className="flex flexColumn">
+    <Wrapper className="flex1 flexColumn1">
       <IconStyle>{getIcon}</IconStyle>
       <TitleStyle className="font20 extraBold">{title}</TitleStyle>
       <SubtitleStyle className="font13">{subtitle}</SubtitleStyle>

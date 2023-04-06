@@ -18,7 +18,7 @@ body {
 
 .WelcomeComponent {
   border: 1px solid rgb(206, 206, 206);
-  padding: 20px;
+  padding: 10px;
   width: max-content;
   display: flex;
   flex-direction: column;
@@ -54,8 +54,9 @@ button {
 
 #carPic {
   width: 1200px;
-  height: 900px;
+  height: 700px;
   border-radius: 20px;
+  
 }
 .HomeH1 {
   color: rgb(255, 255, 255);
@@ -64,7 +65,7 @@ button {
   color: rgb(255, 255, 255);
 }
 .card-img {
-  height: 350px;
+  /* height: 350px; */
 }
 
 .card-group {

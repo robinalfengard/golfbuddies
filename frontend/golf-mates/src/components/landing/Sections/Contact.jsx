@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <Wrapper id="contact">
       <div className="lightBg">
-        <div className="container">
+        <div className="container1">
           <HeaderInfo>
             <h1 className="font40 extraBold">Kontakt</h1>
             <p className="font13">
@@ -18,7 +18,7 @@ export default function Contact() {
               tveka inte att kontakta oss!
             </p>
           </HeaderInfo>
-          <div className="row1" style={{ paddingBottom: "30px" }}>
+          <div className="row" style={{ paddingBottom: "30px" }}>
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <Form>
                 <label className="font13">Förnamn:</label>
@@ -66,7 +66,7 @@ export default function Contact() {
             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
               <div
                 style={{ width: "50%" }}
-                className="flexNullCenter flexColumn"
+                className="flexNullCenter1 flexColumn1"
               >
                 <ContactImgBox>
                   <img src={ContactImg1} alt="office" className="radius6" />
@@ -134,7 +134,7 @@ const ContactImgBox = styled.div`
   object-fit: cover;
   max-width: 300px;
   align-self: flex-end;
-  margin: -700px 30px 10px 0;
+  margin: -300px 660px 10px 0;
 `;
 const SumbitWrapper = styled.div`
   @media (max-width: 991px) {

@@ -54,6 +54,9 @@ function ListOfBookings(props) {
         <Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>
           Lediga Bokningar
         </Card.Title>
+        <button className="font30 extraBold greenColor" onClick={getAllAds}>
+          Uppdatera listan
+        </button>
 
         <br />
         {ads.map((c, i) => (

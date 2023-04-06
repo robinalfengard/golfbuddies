@@ -8,23 +8,22 @@ export default function BlogBox({ id, club, handicap, time, car, action, slots, 
         <div className="container">
         <div className="data">
         <h3 className="font20 extraBold">{id}</h3>
-        <p className="font13" style={{ padding: "30px 0" }}>
-          {club}
+        <p className="tag blueColor radius6 font13 extraBold" style={{ padding: "" }}>{club}
         </p>
           <p className="font13 extraBold">{handicap}</p>
          <p className="font13 extraBold">{slots}</p>
           
-          <p className="tag coralBg radius6 font13 extraBold">{time}</p>
-          <p className="tag coralBg radius6 font13 extraBold">{car}</p>
+          <p className="tag greenColor radius6 font13 extraBold">{time}</p>
+          <p className="tag greenColor radius6 font13 extraBold">{car}</p>
           </div>
           <div className="players">
-          <p className=" radius6 font13 extraBold">{players}</p>
+          <p className=" radius6 font13 extraBold" style={{ padding: "5px 15px" }}>{players}</p>
           
-          <p className=" radius6 font13 extraBold">{players2}</p>
+          <p className=" radius6 font13 extraBold" style={{ padding: "1px 15px" }}>{players2}</p>
           
-          <p className=" radius6 font13 extraBold">{players3}</p>
+          <p className=" radius6 font13 extraBold" style={{ padding: "1px 15px" }}>{players3}</p>
        
-          <p className=" radius6 font13 extraBold">{players4}</p>
+          <p className=" radius6 font13 extraBold" style={{ padding: "1px 15px" }}>{players4}</p>
           
 
         </div>

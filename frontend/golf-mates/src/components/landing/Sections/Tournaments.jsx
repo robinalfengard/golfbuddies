@@ -16,14 +16,14 @@ export default function Projects() {
   return (
     <Wrapper id="projects">
       <div className="whiteBg">
-        <div className="container">
+        <div className="container1">
           <HeaderInfo>
             <h1 className="font40 extraBold">Aktuella tävlingar</h1>
             <p className="font13">
               Få en överblick över de aktuella tävlingar som finns tillgängliga.
             </p>
           </HeaderInfo>
-          <div className="row textCenter">
+          <div className="row textCenter1">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg1}
@@ -49,7 +49,7 @@ export default function Projects() {
               />
             </div>
           </div>
-          <div className="row textCenter">
+          <div className="row textCenter1">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg1}
@@ -75,7 +75,7 @@ export default function Projects() {
               />
             </div>
           </div>
-          <div className="row flexCenter">
+          <div className="row flexCenter1">
             <div style={{ margin: "50px 0", width: "200px" }}>
               <FullButton title="Visa mer" action={() => alert("clicked")} />
             </div>
@@ -83,11 +83,11 @@ export default function Projects() {
         </div>
       </div>
       <div className="lightBg">
-        <div className="container">
-          <Advertising className="flexSpaceCenter">
+        <div className="container1">
+          <Advertising className="flexSpaceCenter1">
             <AddLeft>
               <AddLeftInner>
-                <ImgWrapper className="flexCenter">
+                <ImgWrapper className="flexCenter1">
                   <img className="radius8" src={AddImage2} alt="add" />
                 </ImgWrapper>
               </AddLeftInner>
@@ -100,7 +100,7 @@ export default function Projects() {
                 Vi tror även på hållbarhet, därför skapade vi plattformen med hållbarhet i fokus. Vi jobbar aktivt med att minska miljöpåverkan och uppmuntrar våra användare att göra samma sak.
               </p>
               <ButtonsRow
-                className="flexNullCenter"
+                className="flexNullCenter1"
                 style={{ margin: "30px 0" }}
               >
                 <div style={{ width: "190px" }}>

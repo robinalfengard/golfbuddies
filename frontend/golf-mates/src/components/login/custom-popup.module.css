@@ -23,6 +23,7 @@ FloatingLabel {
   min-width: 345px;
   position: relative;
   transition: all 5s ease-in-out;
+  color:rgba(0, 0, 0, 0.7)
   
 }
 

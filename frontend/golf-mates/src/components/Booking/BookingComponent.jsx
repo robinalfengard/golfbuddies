@@ -76,20 +76,6 @@ function BookingComponent(props) {
     <>
       <div className="booking-container">
         <div className="golf-images-container">
-          <img
-            src="https://golf.com/wp-content/uploads/2019/08/golf-buddies.jpg"
-            alt="Golf Course"
-          />
-          <img
-            src="https://thumbs.dreamstime.com/b/friends-golf-course-portrait-young-group-walking-equipment-beautiful-game-sunny-day-162976211.jpg"
-            alt="Golf Course"
-            className="hidden"
-          />
-          <img
-            src="https://golfdigest.sports.sndimg.com/content/dam/images/golfdigest/fullset/2015/08/12/55cbb6774759c60c08235d75_Annoying-Golf-Partner-Wont-Pickup-Guy.jpg.rend.hgtvcom.616.411.suffix/1573513079698.jpeg"
-            alt="Golf Course"
-            className="hidden"
-          />
         </div>
         <div className="booking-form-container">
           <Form

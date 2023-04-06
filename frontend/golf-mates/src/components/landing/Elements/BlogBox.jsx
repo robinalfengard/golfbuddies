@@ -11,7 +11,7 @@ export default function BlogBox({ tag, title, text, action, author }) {
         </p>
         <p className="font13 extraBold">{author}</p>
         <div className="flex">
-          <p className="tag coralBg radius6 font13 extraBold">{tag}</p>
+          <p className="tag greenColor radius6 font13 extraBold">{tag}</p>
         </div>
       </Wrapper>
     </WrapperBtn>
