@@ -68,10 +68,18 @@ function ListOfBookings(props) {
                 .slice(1, 17)
                 .replace("T", " ")}`}
               car={`Samåkningsmöjlighet ${c.hasCar ? "Ja" : "Nej"}`}
-              players={`Spelare 1: ${c.players[0]}`}
-              players2={`Spelare 2: ${c.players[1]}`}
-              players3={`Spelare 3: ${c.players[2]}`}
-              players4={`Spelare 4: ${c.players[3]}`}
+              players={`Spelare 1: ${
+                c.players[0] === undefined ? "Plats ledig" : c.players[0]
+              }`}
+              players2={`Spelare 2: ${
+                c.players[1] === undefined ? "Plats ledig" : c.players[1]
+              }`}
+              players3={`Spelare 3: ${
+                c.players[2] === undefined ? "Plats ledig" : c.players[2]
+              }`}
+              players4={`Spelare 4: ${
+                c.players[3] === undefined ? "Plats ledig" : c.players[3]
+              }`}
               action={() => book(c)}
             />
           </div>
