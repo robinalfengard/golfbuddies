@@ -10,6 +10,7 @@ import PlayAdService from "../../services/PlayAdService";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Footer from "./Footer.jsx";
+import { useParams } from "react-router-dom";
 
 function BookingComponent(props) {
   const [validated, setValidated] = useState(false);
@@ -169,8 +170,9 @@ function BookingComponent(props) {
             <button className="skapaSpelannons row flexcenter" type="submit">Lägg upp spelförslag</button>
           </Form>
         </div>
-        <Footer />
+       
       </div>
+      <Footer />
     </>
   );
 }
