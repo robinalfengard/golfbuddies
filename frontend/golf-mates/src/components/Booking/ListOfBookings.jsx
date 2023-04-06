@@ -4,9 +4,8 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link, useParams } from "react-router-dom";
-import CardGroup from "react-bootstrap/CardGroup";
-import { func } from "prop-types";
-import { get } from "react-scroll/modules/mixins/scroller";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 import "./ListOfBookings.css";
 import BookingBox from "./BookingBox";
 
@@ -30,49 +29,53 @@ function ListOfBookings(props) {
     });
   }
 
-  return (
-      <Card>
-        <Card.Body>
-          <Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>Lediga Bokningar</Card.Title>
- 
-            <br />
-            {ads.map((c, i) => (
-              <div className="row">
-              <BookingBox
+  const book = (c) => {
+    confirmAlert({
+      title: "Boka spelplats?",
+      message: `Bana: ${c.golfClub.club}  
+      Tid: ${JSON.stringify(c.playTime).slice(1, 17).replace("T", " ")}`,
 
-               id={`Bokningsnr: ${c.id}`}
-              
-               club={`Klubb: ${c.golfClub.club}`}
-              
-              
-              
-               time={`Tid: ${JSON.stringify(c.playTime)
+      buttons: [
+        {
+          label: "Ja",
+          onClick: () => bookPlaySlot(c.id),
+        },
+        {
+          label: "Nej",
+          onClick: () => "",
+        },
+      ],
+    });
+  };
+
+  return (
+    <Card>
+      <Card.Body>
+        <Card.Title className="font40 extraBold blueColor" onClick={getAllAds}>
+          Lediga Bokningar
+        </Card.Title>
+
+        <br />
+        {ads.map((c, i) => (
+          <div className="row">
+            <BookingBox
+              id={`Bokningsnr: ${c.id}`}
+              club={`Klubb: ${c.golfClub.club}`}
+              time={`Tid: ${JSON.stringify(c.playTime)
                 .slice(1, 17)
                 .replace("T", " ")}`}
-              
-               car={`Samåkningsmöjlighet ${c.hasCar?"Ja":"Nej"}`}
-
-               players={`Spelare 1: ${c.players[0]}`}
-             
-               players2={`Spelare 2: ${c.players[1]}`}
-               players3={`Spelare 3: ${c.players[2]}`}
-               players4={`Spelare 4: ${c.players[3]}`}
-              
-               action={() => bookPlaySlot(c.id)}
-              
-               />
-              </div>
-
-     
-                    ))}
-                    </Card.Body>
-
-                    </Card>
-                    );
-                    }
-           
-            
-    
-    
+              car={`Samåkningsmöjlighet ${c.hasCar ? "Ja" : "Nej"}`}
+              players={`Spelare 1: ${c.players[0]}`}
+              players2={`Spelare 2: ${c.players[1]}`}
+              players3={`Spelare 3: ${c.players[2]}`}
+              players4={`Spelare 4: ${c.players[3]}`}
+              action={() => book(c)}
+            />
+          </div>
+        ))}
+      </Card.Body>
+    </Card>
+  );
+}
 
 export default ListOfBookings;

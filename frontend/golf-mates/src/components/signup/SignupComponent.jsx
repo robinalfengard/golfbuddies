@@ -107,6 +107,13 @@ function SignupComponent(props) {
     }));
   };
 
+  const changeSexHandler = (event) => {
+    setUser((prevState) => ({
+      ...prevState,
+      sex: event.target.value,
+    }));
+  };
+
   return (
     <div
       style={{
@@ -216,6 +223,21 @@ function SignupComponent(props) {
                     {c.club}
                   </option>
                 ))}
+              </Form.Select>
+            </FloatingLabel>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formSex">
+            <FloatingLabel label="Kön" className="mb-3">
+              <Form.Select
+                id="sex"
+                placeholder="Kön"
+                name="sex"
+                value={user.sex}
+                onChange={changeSexHandler}
+              >
+                <option key="1">Man</option>
+                <option key="2">Kvinna</option>
+                <option key="3">Vill ej ange</option>
               </Form.Select>
             </FloatingLabel>
           </Form.Group>
