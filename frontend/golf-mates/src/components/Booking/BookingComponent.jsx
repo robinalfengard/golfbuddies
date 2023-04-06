@@ -18,7 +18,10 @@ function BookingComponent(props) {
   const [districts, setDistricts] = useState([{}]);
   const [golfclubs, setGolfclubs] = useState([]);
   const { username } = useParams();
-  const [forminput, setForminput] = useState({ username: username });
+  const [forminput, setForminput] = useState({
+    username: username,
+    hasCar: false,
+  });
 
   useEffect(() => {
     getDistrictList();
@@ -26,7 +29,7 @@ function BookingComponent(props) {
 
   useEffect(() => {
     getGolfClubs(forminput.locationId);
-  }, [forminput]);
+  }, [forminput.locationId]);
 
   async function getDistrictList() {
     LocationService.getDistricts().then((response) => {
@@ -48,9 +51,7 @@ function BookingComponent(props) {
     } else {
       forminput.locationId = parseInt(forminput.locationId);
       forminput.golfclub = parseFloat(forminput.golfclub);
-      console.log(forminput.username);
       PlayAdService.registerPlayAd(forminput);
-
       console.log(forminput);
     }
     event.preventDefault();
@@ -65,7 +66,8 @@ function BookingComponent(props) {
         hasCar: !forminput.hasCar,
       }));
     } else {
-      setForminput((prevState) => ({ ...prevState, [name]: value }));
+      setForminput({ ...forminput, [name]: value });
+      console.log("Här");
     }
 
     console.log(forminput);
