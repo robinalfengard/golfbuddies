@@ -26,7 +26,7 @@ function BookingComponent(props) {
 
   useEffect(() => {
     getGolfClubs(forminput.locationId);
-  }, [forminput.locationId]);
+  }, [forminput]);
 
   async function getDistrictList() {
     LocationService.getDistricts().then((response) => {
@@ -47,7 +47,6 @@ function BookingComponent(props) {
       event.stopPropagation();
     } else {
       forminput.locationId = parseInt(forminput.locationId);
-      forminput.handicap = parseFloat(forminput.handicap);
       forminput.golfclub = parseFloat(forminput.golfclub);
       console.log(forminput.username);
       PlayAdService.registerPlayAd(forminput);
@@ -75,8 +74,7 @@ function BookingComponent(props) {
   return (
     <>
       <div className="booking-container">
-        <div className="golf-images-container">
-        </div>
+        <div className="golf-images-container"></div>
         <div className="booking-form-container">
           <Form
             noValidate
@@ -140,23 +138,11 @@ function BookingComponent(props) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formClub">
-              <label className="mb-3">Handikapp: </label>
-              <input
-                min="0"
-                max="36"
-                type="number"
-                name="handicap"
-                id="handicap"
-                value={forminput.handicap}
-                onChange={handleInputChange}
-                required
-              />
-            </Form.Group>
-            <button className="skapaSpelannons row flexcenter" type="submit">Lägg upp spelförslag</button>
+            <button className="skapaSpelannons row flexcenter" type="submit">
+              Lägg upp spelförslag
+            </button>
           </Form>
         </div>
-       
       </div>
       <Footer />
     </>
