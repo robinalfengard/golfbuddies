@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <Wrapper id="blog">
       <div className="whiteBg">
-        <div className="container">
+        <div className="container1">
           <HeaderInfo>
             <h1 className="font40 extraBold">Senaste bokade rundorna</h1>
             <p className="font13">
@@ -79,13 +79,13 @@ export default function Blog() {
       </div>
       <div className="lightBg" style={{padding: '50px 0'}}>
         <div className="container">
-          <HeaderInfo>
+          {/* <HeaderInfo>
             <h1 className="font40 extraBold">Kundomdömen</h1>
             <p className="font13">
-              
+          
             </p>
           </HeaderInfo>
-          <TestimonialSlider />
+          <TestimonialSlider /> */}
         </div>
       </div>
     </Wrapper>
@@ -94,10 +94,10 @@ export default function Blog() {
 
 const Wrapper = styled.section`
   width: 100%;
-  padding-top: 20px;
+  padding-top: -200px;
 `;
 const HeaderInfo = styled.div`
-  margin-bottom: 30px;
+  margin-bottom: -50px;
   @media (max-width: 860px) {
     text-align: center;
   }

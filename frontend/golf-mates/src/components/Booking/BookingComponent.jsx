@@ -9,7 +9,7 @@ import GolfClubService from "../../services/GolfClubService";
 import PlayAdService from "../../services/PlayAdService";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-import { useParams } from "react-router-dom";
+import Footer from "./Footer.jsx";
 
 function BookingComponent(props) {
   const [validated, setValidated] = useState(false);
@@ -133,8 +133,7 @@ function BookingComponent(props) {
               </FloatingLabel>
             </Form.Group>
 
-            <label>Tee Time?</label>
-            <br />
+            <label>Tid:</label>
             <input
               type="datetime-local"
               name="teeTime"
@@ -145,7 +144,7 @@ function BookingComponent(props) {
             />
 
             <Form.Group className="mb-3" controlId="formClub">
-              <Form.Label>Har du bil?</Form.Label>
+              <label>Har du bil?</label>
               <Form.Check
                 type="checkbox"
                 name="hasCar"
@@ -154,9 +153,23 @@ function BookingComponent(props) {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <button type="submit">Lägg upp spelförslag</button>
+            <Form.Group className="mb-3" controlId="formClub">
+              <label className="mb-3">Handikapp: </label>
+              <input
+                min="0"
+                max="36"
+                type="number"
+                name="handicap"
+                id="handicap"
+                value={forminput.handicap}
+                onChange={handleInputChange}
+                required
+              />
+            </Form.Group>
+            <button className="skapaSpelannons row flexcenter" type="submit">Lägg upp spelförslag</button>
           </Form>
         </div>
+        <Footer />
       </div>
     </>
   );

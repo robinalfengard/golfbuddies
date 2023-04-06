@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import styled from "styled-components";
 // Components
 import PricingTable from "../Elements/PricingTable";
@@ -10,25 +10,18 @@ export default function Pricing() {
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Prisplan</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p>
           </HeaderInfo>
           <TablesWrapper className="flexSpaceNull">
             <TableBox>
               <PricingTable
                 icon="roller"
                 price="Gratis"
-                title="Nybörjare"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Bas"
                 offers={[
-                  { name: "Produkt Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Produkt Offer #2", cheked: false },
-                  { name: "Produkt", cheked: false },
-                  { name: "Produkt Offer", cheked: false },
+                  { name: "Skapa konto", cheked: true },
+                  { name: "Lägga upp annons", cheked: true },
+                  { name: "Skapa turneringar", cheked: false },
+                  { name: "Chattfunktion", cheked: false },
                 ]}
                 action={() => alert("clicked")}
               />
@@ -36,15 +29,13 @@ export default function Pricing() {
             <TableBox>
               <PricingTable
                 icon="monitor"
-                price="299kr/mån"
-                title="Bas"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                price="49kr/mån"
+                title="Premium"
                 offers={[
-                  { name: "Produkt Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Produkt Offer #2", cheked: true },
-                  { name: "Produkt", cheked: true },
-                  { name: "Produkt Offer", cheked: false },
+                  { name: "Skapa konto", cheked: true },
+                  { name: "Lägga upp annons", cheked: true },
+                  { name: "Skapa turneringar", cheked: true },
+                  { name: "Chattfunktion", cheked: false },
                 ]}
                 action={() => alert("clicked")}
               />
@@ -52,15 +43,13 @@ export default function Pricing() {
             <TableBox>
               <PricingTable
                 icon="browser"
-                price="399kr/mån"
+                price="149kr/mån"
                 title="Guld"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
                 offers={[
-                  { name: "Produkt Offer", cheked: true },
-                  { name: "Offer", cheked: true },
-                  { name: "Produkt Offer #2", cheked: true },
-                  { name: "Produkt", cheked: true },
-                  { name: "Produkt Offer", cheked: true },
+                  { name: "Skapa konto", cheked: true },
+                  { name: "Lägga upp annons", cheked: true },
+                  { name: "Skapa turneringar", cheked: true },
+                  { name: "Chattfunktion", cheked: true },
                 ]}
                 action={() => alert("clicked")}
               />
@@ -95,7 +84,3 @@ const TableBox = styled.div`
     margin: 0 auto
   }
 `;
-*/
-
-
-
