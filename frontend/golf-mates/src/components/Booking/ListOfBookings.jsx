@@ -15,7 +15,8 @@ function ListOfBookings(props) {
 
   useEffect(() => {
     getAllAds();
-  }, []);
+    props.setUpdate(false);
+  }, [props.update]);
 
   async function getAllAds() {
     return await PlayAdService.getPlayAds().then((response) => {
@@ -25,26 +26,35 @@ function ListOfBookings(props) {
 
   async function bookPlaySlot(playAdId) {
     PlayAdService.updatePlayAd(playAdId, username).then((response) => {
+      getAllAds();
       console.log(response.data);
     });
   }
 
   const book = (c) => {
+    let canBook = true;
+    c.players.map((c) => {
+      if (c.split(" ")[0] === username) {
+        canBook = false;
+      }
+    });
     confirmAlert({
-      title: "Boka spelplats?",
+      title: canBook ? "Boka spelplats?" : "Du är redan inbokad.",
       message: `Bana: ${c.golfClub.club}  
       Tid: ${JSON.stringify(c.playTime).slice(1, 17).replace("T", " ")}`,
 
-      buttons: [
-        {
-          label: "Ja",
-          onClick: () => bookPlaySlot(c.id),
-        },
-        {
-          label: "Nej",
-          onClick: () => "",
-        },
-      ],
+      buttons: canBook
+        ? [
+            {
+              label: "Ja",
+              onClick: () => bookPlaySlot(c.id),
+            },
+            {
+              label: "Nej",
+              onClick: () => "",
+            },
+          ]
+        : [],
     });
   };
 

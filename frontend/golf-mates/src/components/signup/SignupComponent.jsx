@@ -200,6 +200,7 @@ function SignupComponent(props) {
                 name="golfdistrict"
                 value={user.locationId}
                 onChange={changeDistrictHandler}
+                onSelect={changeDistrictHandler}
               >
                 {districts.map((c) => (
                   <option key={c.id} value={c.id}>
@@ -217,6 +218,7 @@ function SignupComponent(props) {
                 name="golfclubs"
                 value={user.golfClubId}
                 onChange={changeGolfClubHandler}
+                onSelect={changeGolfClubHandler}
               >
                 {golfclubs.map((c) => (
                   <option key={c.id} value={c.id}>

@@ -52,6 +52,7 @@ function BookingComponent(props) {
       forminput.locationId = parseInt(forminput.locationId);
       forminput.golfclub = parseFloat(forminput.golfclub);
       PlayAdService.registerPlayAd(forminput);
+      props.setUpdate(true);
       console.log(forminput);
     }
     event.preventDefault();
@@ -93,6 +94,7 @@ function BookingComponent(props) {
                   name="locationId"
                   value={forminput.locationId}
                   onChange={handleInputChange}
+                  onFocus={handleInputChange}
                 >
                   {districts.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -110,6 +112,7 @@ function BookingComponent(props) {
                   name="golfclub"
                   value={forminput.courseId}
                   onChange={handleInputChange}
+                  onFocus={handleInputChange}
                 >
                   {golfclubs.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -135,7 +138,6 @@ function BookingComponent(props) {
               <Form.Check
                 type="checkbox"
                 name="hasCar"
-                id="hasCar"
                 value={forminput.hasCar}
                 onChange={handleInputChange}
               />

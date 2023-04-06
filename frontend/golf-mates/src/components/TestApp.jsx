@@ -10,6 +10,7 @@ import BookingComponent from "./Booking/BookingComponent";
 import LandingComponent from "./landing/Landing";
 import TopNavbar from "./landing/Nav/TopNavbar";
 import ListOfBookings from "./Booking/ListOfBookings";
+import { useState } from "react";
 
 function AuthenticatedRoute({ children }) {
   const authContext = useAuth();
@@ -20,6 +21,7 @@ function AuthenticatedRoute({ children }) {
 }
 
 export default function TestApp() {
+  const [update, setUpdate] = useState(false);
   return (
     <div>
       <AuthProvider>
@@ -36,8 +38,8 @@ export default function TestApp() {
               element={
                 <AuthenticatedRoute>
                   <WelcomeComponent />
-                  <ListOfBookings />
-                  <BookingComponent />
+                  <ListOfBookings update={update} setUpdate={setUpdate} />
+                  <BookingComponent update={update} setUpdate={setUpdate} />
                 </AuthenticatedRoute>
               }
             />
